@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { StyledIconButton } from '../../../utils/utils'
-import MoreVertIcon from '@mui/icons-material/MoreVert'
-import { MobileModal } from '../../Videos/MobileModal'
+import React, { useState } from 'react';
+import { StyledIconButton } from '../../../utils/utils';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { MobileModal } from '../../Videos/MobileModal';
 
 export const HeaderMoreButton = () => {
-  const [isHeaderModalOpen, setIsHeaderModalOpen] = useState(false)
-  const handleHeaderModalClose = () => setIsHeaderModalOpen(false)
+  const [isHeaderModalOpen, setIsHeaderModalOpen] = useState(false);
+  const handleHeaderModalClose = () => setIsHeaderModalOpen(false);
 
   return (
     <StyledIconButton>
@@ -17,5 +17,5 @@ export const HeaderMoreButton = () => {
         isMobileHeaderMoreButton={true}
       />
     </StyledIconButton>
-  )
-}
+  );
+};

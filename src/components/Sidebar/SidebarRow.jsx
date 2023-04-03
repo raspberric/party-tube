@@ -1,24 +1,24 @@
-import { SidebarMenuItem } from './FullWidthSidebar'
-import { StyledListItemIcon } from '../../utils/utils'
-import ListItemText from '@mui/material/ListItemText'
-import { isSidebarDrawerOpenAtom } from '../../store'
-import { useAtom } from 'jotai'
-import { Link } from 'react-router-dom'
+import { SidebarMenuItem } from './FullWidthSidebar';
+import { StyledListItemIcon } from '../../utils/utils';
+import ListItemText from '@mui/material/ListItemText';
+import { isSidebarDrawerOpenAtom } from '../../store';
+import { useAtom } from 'jotai';
+import { Link } from 'react-router-dom';
 
 export const SidebarRow = ({ Icon, text, onClick }) => {
-  const [, setIsSidebarDrawerOpen] = useAtom(isSidebarDrawerOpenAtom)
+  const [, setIsSidebarDrawerOpen] = useAtom(isSidebarDrawerOpenAtom);
 
-  const isHomeButton = text === 'Home'
+  const isHomeButton = text === 'Home';
 
   const handleClick = () => {
     // use the provided onClick function instead of default
     if (onClick) {
-      onClick()
+      onClick();
     } else {
       // default onClick function is to close the sidebar drawer
-      setIsSidebarDrawerOpen(false)
+      setIsSidebarDrawerOpen(false);
     }
-  }
+  };
 
   return (
     <SidebarMenuItem
@@ -31,5 +31,5 @@ export const SidebarRow = ({ Icon, text, onClick }) => {
       </StyledListItemIcon>
       <ListItemText primary={text} />
     </SidebarMenuItem>
-  )
-}
+  );
+};

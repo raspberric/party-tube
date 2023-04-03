@@ -1,7 +1,7 @@
-import React from 'react'
-import { MenuItem } from '@mui/material'
-import { StyledListItemIcon } from '../../utils/utils'
-import ListItemText from '@mui/material/ListItemText'
+import React from 'react';
+import { MenuItem } from '@mui/material';
+import { StyledListItemIcon } from '../../utils/utils';
+import ListItemText from '@mui/material/ListItemText';
 
 export const PopperRow = ({ Icon, text, onClick }) => {
   return (
@@ -11,5 +11,5 @@ export const PopperRow = ({ Icon, text, onClick }) => {
       </StyledListItemIcon>
       <ListItemText primary={text} />
     </MenuItem>
-  )
-}
+  );
+};

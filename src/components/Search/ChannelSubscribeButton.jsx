@@ -1,20 +1,20 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import Button from '@mui/material/Button'
+import React from 'react';
+import styled from 'styled-components/macro';
+import Button from '@mui/material/Button';
 
 export const ChannelSubscribeButton = () => {
   return (
     <SubscribeButtonContainer>
       <SubscribeButton size="small">SUBSCRIBE</SubscribeButton>
     </SubscribeButtonContainer>
-  )
-}
+  );
+};
 const SubscribeButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: fit-content;
-`
+`;
 const SubscribeButton = styled(Button)`
   && {
     background-color: #c00;
@@ -30,4 +30,4 @@ const SubscribeButton = styled(Button)`
       background-color: #c00;
     }
   }
-`
+`;

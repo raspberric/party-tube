@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
-import CreateVideoIconButton from './CreateVideoIconButton'
-import CreateVideoMenu from './CreateVideoMenu'
+import React, { useState } from 'react';
+import CreateVideoIconButton from './CreateVideoIconButton';
+import CreateVideoMenu from './CreateVideoMenu';
 
 const CreateVideoButton = () => {
-  const [anchorVideoButton, setAnchorVideoButton] = useState(null)
+  const [anchorVideoButton, setAnchorVideoButton] = useState(null);
   const handleVideoMenuClose = () => {
-    setAnchorVideoButton(null)
-  }
+    setAnchorVideoButton(null);
+  };
   return (
     <>
       <CreateVideoIconButton {...{ setAnchorVideoButton }} />
       <CreateVideoMenu {...{ anchorVideoButton, handleVideoMenuClose }} />
     </>
-  )
-}
+  );
+};
 
-export default CreateVideoButton
+export default CreateVideoButton;

@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import styled from 'styled-components/macro'
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components/macro';
 import { ThemeProvider } from '@mui/styles';
-import { StyledEngineProvider } from "@mui/styled-engine";
-import { Grid } from '@mui/material'
-import { columnBreakpoints } from '../components/Videos/columnBreakpoints'
+import { StyledEngineProvider } from '@mui/styled-engine';
+import { Grid } from '@mui/material';
+import { columnBreakpoints } from '../components/Videos/columnBreakpoints';
 import {
   useIsMobileView,
   TWO_COL_MIN_WIDTH,
@@ -20,13 +20,13 @@ import {
   MINI_SIDEBAR_WIDTH,
   SHOW_FULL_SIDEBAR_BREAKPOINT,
   FULL_SIDEBAR_WIDTH,
-} from '../utils/utils'
-import { request } from '../utils/api'
-import countries from '../components/ChipsBar/chipsArray'
-import InfiniteScroll from 'react-infinite-scroll-component'
-import { GridItem } from '../components/Videos/GridItem'
-import { useAtom } from 'jotai'
-import { userSettingToShowFullSidebarAtom } from '../store'
+} from '../utils/utils';
+import { request } from '../utils/api';
+import countries from '../components/ChipsBar/chipsArray';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import { GridItem } from '../components/Videos/GridItem';
+import { useAtom } from 'jotai';
+import { userSettingToShowFullSidebarAtom } from '../store';
 
 const Videos = ({
   selectedChipIndex,
@@ -35,20 +35,20 @@ const Videos = ({
   popularVideosNextPageToken,
   setPopularVideosNextPageToken,
 }) => {
-  const VIDEOS_PER_QUERY = 24
-  const isMobileView = useIsMobileView()
+  const VIDEOS_PER_QUERY = 24;
+  const isMobileView = useIsMobileView();
   const [userSettingToShowFullSidebar] = useAtom(
-    userSettingToShowFullSidebarAtom
-  )
+    userSettingToShowFullSidebarAtom,
+  );
 
   // total number of videos returned by API query
-  const [popularVideosTotalResults, setPopularVideosTotalResults] = useState(0)
-  const [isLoading, setIsLoading] = useState(false)
-  const { regionCode: selectedRegionCode } = countries[selectedChipIndex]
+  const [popularVideosTotalResults, setPopularVideosTotalResults] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
+  const { regionCode: selectedRegionCode } = countries[selectedChipIndex];
 
   const getPopularVideos = async () => {
     try {
-      setIsLoading(true)
+      setIsLoading(true);
       const { data } = await request('/videos', {
         params: {
           part: 'snippet,contentDetails,statistics',
@@ -58,33 +58,31 @@ const Videos = ({
           // initial value is null so should be fine for 1st request
           pageToken: popularVideosNextPageToken,
         },
-      })
-      setPopularVideosTotalResults(data.pageInfo.totalResults)
+      });
+      setPopularVideosTotalResults(data.pageInfo.totalResults);
 
       // infinite scroll needs previous page + current page data
-      setLandingPageVideos([...landingPageVideos, ...data.items])
-      setPopularVideosNextPageToken(data.nextPageToken)
-      setIsLoading(false)
+      setLandingPageVideos([...landingPageVideos, ...data.items]);
+      setPopularVideosNextPageToken(data.nextPageToken);
+      setIsLoading(false);
     } catch (error) {
-      console.log(error)
-      setIsLoading(false)
+      console.log(error);
+      setIsLoading(false);
     }
-  }
+  };
 
   // get selectedCountry popular videos when app starts and click on another chip
   useEffect(() => {
-    getPopularVideos()
-  }, [selectedChipIndex])
+    getPopularVideos();
+  }, [selectedChipIndex]);
 
   // determine if more query needed for infinite scroll
   let shouldGetMoreResults =
     (popularVideosTotalResults - landingPageVideos.length) / VIDEOS_PER_QUERY >=
-    1
+    1;
 
   return (
-    <OuterVideoContainer
-      showFullSidebar={userSettingToShowFullSidebar}
-    >
+    <OuterVideoContainer showFullSidebar={userSettingToShowFullSidebar}>
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={columnBreakpoints}>
           <InnerVideoContainer>
@@ -99,10 +97,10 @@ const Videos = ({
               <Grid container spacing={isMobileView ? 0 : 1}>
                 {isLoading
                   ? [...Array(VIDEOS_PER_QUERY)].map((_, index) => {
-                      return <GridItem key={`skeleton-${index}`} />
+                      return <GridItem key={`skeleton-${index}`} />;
                     })
                   : landingPageVideos.map((video) => {
-                      return <GridItem key={video.id} video={video} />
+                      return <GridItem key={video.id} video={video} />;
                     })}
               </Grid>
             </InfiniteScroll>
@@ -111,9 +109,9 @@ const Videos = ({
       </StyledEngineProvider>
     </OuterVideoContainer>
   );
-}
+};
 
-export default Videos
+export default Videos;
 
 export const OuterVideoContainer = styled.div`
   background-color: #f9f9f9;
@@ -135,7 +133,7 @@ export const OuterVideoContainer = styled.div`
     padding-left: ${({ showFullSidebar }) =>
       showFullSidebar ? FULL_SIDEBAR_WIDTH : MINI_SIDEBAR_WIDTH}px;
   }
-`
+`;
 
 const InnerVideoContainer = styled.div`
   /* mobile view has 0 margin */
@@ -163,4 +161,4 @@ const InnerVideoContainer = styled.div`
   @media screen and (min-width: ${SIX_COL_MIN_WIDTH}px) {
     max-width: ${SIX_COL_MAX_WIDTH}px;
   }
-`
+`;

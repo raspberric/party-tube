@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import { TWO_COL_MIN_WIDTH } from '../../utils/utils'
-import Chip from '@mui/material/Chip'
-import countries from './chipsArray'
+import React from 'react';
+import styled from 'styled-components/macro';
+import { TWO_COL_MIN_WIDTH } from '../../utils/utils';
+import Chip from '@mui/material/Chip';
+import countries from './chipsArray';
 
 export const Chips = ({
   selectedChipIndex,
@@ -11,11 +11,11 @@ export const Chips = ({
   setPopularVideosNextPageToken,
 }) => {
   const handleChipClick = (index) => {
-    setSelectedChipIndex(index)
+    setSelectedChipIndex(index);
     // reset landingPageVideos & popularVideosNextPageToken to default when select another chip
-    setLandingPageVideos([])
-    setPopularVideosNextPageToken(null)
-  }
+    setLandingPageVideos([]);
+    setPopularVideosNextPageToken(null);
+  };
 
   return countries.map(({ country }, index) => {
     return (
@@ -27,9 +27,9 @@ export const Chips = ({
         onClick={() => handleChipClick(index)}
         component="li"
       />
-    )
-  })
-}
+    );
+  });
+};
 
 const StyledChip = styled(Chip)`
   && {
@@ -63,4 +63,4 @@ const StyledChip = styled(Chip)`
     padding: 0 12px;
     font-size: 0.875rem;
   }
-`
+`;

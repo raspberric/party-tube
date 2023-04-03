@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import Popover from '@mui/material/Popover'
-import Divider from '@mui/material/Divider'
-import { AvatarAccountInfo } from './AvatarAccountInfo'
-import { MobileAvatarMenuBottom } from './MobileAvatarMenuBottom'
-import { MobileAvatarMenuTop } from './MobileAvatarMenuTop'
-import { MobileAvatarMenuHeader } from './MobileAvatarMenuHeader'
-import { MobileUpButton } from './MobileUpButton'
+import React from 'react';
+import styled from 'styled-components/macro';
+import Popover from '@mui/material/Popover';
+import Divider from '@mui/material/Divider';
+import { AvatarAccountInfo } from './AvatarAccountInfo';
+import { MobileAvatarMenuBottom } from './MobileAvatarMenuBottom';
+import { MobileAvatarMenuTop } from './MobileAvatarMenuTop';
+import { MobileAvatarMenuHeader } from './MobileAvatarMenuHeader';
+import { MobileUpButton } from './MobileUpButton';
 
 function MobileAvatarPopUpMenu({ anchorAvatarButton, handleAvatarMenuClose }) {
   return (
@@ -23,10 +23,10 @@ function MobileAvatarPopUpMenu({ anchorAvatarButton, handleAvatarMenuClose }) {
       <Divider />
       <MobileAvatarMenuBottom onClick={handleAvatarMenuClose} />
     </MobileAvatarMenuContainer>
-  )
+  );
 }
 
-export default MobileAvatarPopUpMenu
+export default MobileAvatarPopUpMenu;
 
 const MobileAvatarMenuContainer = styled(({ className, ...props }) => (
   <Popover
@@ -59,4 +59,4 @@ const MobileAvatarMenuContainer = styled(({ className, ...props }) => (
     transform-origin: 0 !important; */
     /* overflow-y: hidden; */
   }
-`
+`;

@@ -1,16 +1,16 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import Avatar from '@mui/material/Avatar'
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
+import React from 'react';
+import styled from 'styled-components/macro';
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import {
   DEFAULT_FONT_SIZE,
   TWO_COL_MIN_WIDTH,
   useIsMobileView,
-} from '../../../../utils/utils'
+} from '../../../../utils/utils';
 
 export const AvatarAccountInfo = ({ onClick }) => {
-  const isMobileView = useIsMobileView()
+  const isMobileView = useIsMobileView();
 
   return (
     <AccountInfoHeader style={isMobileView ? { padding: '8px' } : null}>
@@ -23,19 +23,19 @@ export const AvatarAccountInfo = ({ onClick }) => {
         </ManageAccountButton>
       </Box>
     </AccountInfoHeader>
-  )
-}
+  );
+};
 const AccountName = styled(Typography)`
   &&& {
     font-size: 16px;
     font-weight: 600;
   }
-`
+`;
 const AccountEmail = styled(Typography)`
   && {
     font-size: ${DEFAULT_FONT_SIZE}px;
   }
-`
+`;
 const ManageAccountButton = styled(Typography)`
   && {
     font-size: ${DEFAULT_FONT_SIZE}px;
@@ -43,7 +43,7 @@ const ManageAccountButton = styled(Typography)`
     color: #2c77db;
     cursor: pointer;
   }
-`
+`;
 
 const AccountInfoHeader = styled.div`
   padding: 0;
@@ -63,4 +63,4 @@ const AccountInfoHeader = styled.div`
       height: 40px;
     }
   }
-`
+`;

@@ -1,7 +1,7 @@
-import React from 'react'
-import he from 'he'
-import numeral from 'numeral'
-import { DotSeparator } from '../Videos/ChannelDetails'
+import React from 'react';
+import he from 'he';
+import numeral from 'numeral';
+import { DotSeparator } from '../Videos/ChannelDetails';
 import {
   ContentContainer,
   VideoContentTop,
@@ -9,7 +9,7 @@ import {
   StatsContainer,
   ContentText,
   DescriptionsContainer,
-} from './searchUtils'
+} from './searchUtils';
 
 export const DesktopChannelContent = ({ channelTitle, channelInfo }) => {
   return (
@@ -18,8 +18,8 @@ export const DesktopChannelContent = ({ channelTitle, channelInfo }) => {
       <Stats channelInfo={channelInfo} />
       <Descriptions channelInfo={channelInfo} />
     </ContentContainer>
-  )
-}
+  );
+};
 
 const Title = ({ channelTitle }) => {
   return (
@@ -28,8 +28,8 @@ const Title = ({ channelTitle }) => {
         {he.decode(channelTitle)}
       </SearchVideoTitle>
     </VideoContentTop>
-  )
-}
+  );
+};
 
 const Stats = ({ channelInfo }) => {
   return (
@@ -47,13 +47,13 @@ const Stats = ({ channelInfo }) => {
         </ContentText>
       )}
     </StatsContainer>
-  )
-}
+  );
+};
 
 const Descriptions = ({ channelInfo }) => {
   return (
     <DescriptionsContainer>
       {channelInfo && channelInfo.snippet.description.substr(0, 120) + '...'}
     </DescriptionsContainer>
-  )
-}
+  );
+};

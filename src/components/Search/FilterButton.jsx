@@ -1,5 +1,5 @@
-import styled from 'styled-components/macro'
-import Button from '@mui/material/Button'
+import styled from 'styled-components/macro';
+import Button from '@mui/material/Button';
 
 export const FilterButton = styled(Button)`
   && {
@@ -11,4 +11,4 @@ export const FilterButton = styled(Button)`
       background: transparent;
     }
   }
-`
+`;

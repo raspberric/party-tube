@@ -1,8 +1,8 @@
-import React from 'react'
-import he from 'he'
-import { MoreButton } from '../Videos/MoreButton'
-import { ChannelDetails } from '../Videos/ChannelDetails'
-import { SearchCardHeader, SearchVideoTitle } from './searchUtils'
+import React from 'react';
+import he from 'he';
+import { MoreButton } from '../Videos/MoreButton';
+import { ChannelDetails } from '../Videos/ChannelDetails';
+import { SearchCardHeader, SearchVideoTitle } from './searchUtils';
 
 // Mobile view can make sure of CardHeader from MUI
 export const MobileVideoContent = ({
@@ -26,9 +26,9 @@ export const MobileVideoContent = ({
         />
       }
     />
-  )
-}
+  );
+};
 
 const Title = ({ title }) => {
-  return <SearchVideoTitle variant="h4">{he.decode(title)}</SearchVideoTitle>
-}
+  return <SearchVideoTitle variant="h4">{he.decode(title)}</SearchVideoTitle>;
+};

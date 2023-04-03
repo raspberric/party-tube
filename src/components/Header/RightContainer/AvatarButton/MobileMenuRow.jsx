@@ -1,6 +1,6 @@
-import styled from 'styled-components/macro'
-import ListItemText from '@mui/material/ListItemText'
-import { StyledMenuItem, StyledListItemIcon } from '../../../../utils/utils'
+import styled from 'styled-components/macro';
+import ListItemText from '@mui/material/ListItemText';
+import { StyledMenuItem, StyledListItemIcon } from '../../../../utils/utils';
 
 export const MobileMenuRow = ({ Icon, text, onClick }) => {
   return (
@@ -10,10 +10,10 @@ export const MobileMenuRow = ({ Icon, text, onClick }) => {
       </RowIcon>
       <ListItemText primary={text} />
     </StyledMenuItem>
-  )
-}
+  );
+};
 const RowIcon = styled(StyledListItemIcon)`
   && {
     margin-right: 32px;
   }
-`
+`;

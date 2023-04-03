@@ -1,8 +1,8 @@
-import React from 'react'
-import { Typography } from '@mui/material'
-import styled from 'styled-components/macro'
-import { StyledIconButton } from '../../../utils/utils'
-import TuneIcon from '@mui/icons-material/Tune'
+import React from 'react';
+import { Typography } from '@mui/material';
+import styled from 'styled-components/macro';
+import { StyledIconButton } from '../../../utils/utils';
+import TuneIcon from '@mui/icons-material/Tune';
 
 export const MobileSearchTermContainer = ({
   setIsSearchDrawerOpen,
@@ -19,17 +19,16 @@ export const MobileSearchTermContainer = ({
       </SearchTermContainer>
       <SearchPageFilterButton />
     </OuterContainer>
-  )
-}
+  );
+};
 
 const SearchPageFilterButton = () => {
-  return(
-    <StyledIconButton style={{alignSelf: 'center'}}>
+  return (
+    <StyledIconButton style={{ alignSelf: 'center' }}>
       <TuneIcon />
     </StyledIconButton>
-  )
-}
-
+  );
+};
 
 const SearchTermText = styled(Typography)`
   transform: translateY(-16%);
@@ -42,7 +41,7 @@ const SearchTermText = styled(Typography)`
   height: 48px;
   line-height: 48px;
   text-align: initial;
-`
+`;
 const SearchTermContainer = styled.button`
   padding: 0;
   border: none;
@@ -52,7 +51,7 @@ const SearchTermContainer = styled.button`
   color: inherit;
   background: transparent;
   flex-grow: 1;
-`
+`;
 const OuterContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -60,4 +59,4 @@ const OuterContainer = styled.div`
   border-radius: 4px;
   height: 32px;
   flex-grow: 1;
-`
+`;

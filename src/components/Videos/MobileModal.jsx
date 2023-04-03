@@ -1,7 +1,7 @@
-import React from 'react'
-import Modal from '@mui/material/Modal'
-import styled from 'styled-components/macro'
-import { List, ListItem, Typography } from '@mui/material'
+import React from 'react';
+import Modal from '@mui/material/Modal';
+import styled from 'styled-components/macro';
+import { List, ListItem, Typography } from '@mui/material';
 
 export const MobileModal = ({
   isModalOpen,
@@ -14,7 +14,7 @@ export const MobileModal = ({
     ? MobileHeaderModalMenu
     : isSearchPage
     ? MobileModalMenu.slice(1)
-    : MobileModalMenu
+    : MobileModalMenu;
 
   return (
     <Modal open={isModalOpen} onClose={handleModalClose}>
@@ -26,20 +26,20 @@ export const MobileModal = ({
                 {/* add a <ListItemText /> here renders nothing for unknown reason  */}
                 <Typography variant="body1">{item}</Typography>
               </StyledListItem>
-            )
+            );
           })}
         </List>
       </ModalContainer>
     </Modal>
-  )
-}
+  );
+};
 const StyledListItem = styled(ListItem)`
   && {
     padding: 9px 12px;
     color: #030303;
     cursor: pointer;
   }
-`
+`;
 const ModalContainer = styled.div`
   position: absolute;
   top: 50%;
@@ -49,8 +49,8 @@ const ModalContainer = styled.div`
   max-width: 356px;
   max-height: 100%;
   background-color: rgb(249, 249, 249);
-`
-const MobileModalMenu = ['Not interested', 'Save to Watch Later', 'Cancel']
+`;
+const MobileModalMenu = ['Not interested', 'Save to Watch Later', 'Cancel'];
 
 const MobileHeaderModalMenu = [
   'Settings',
@@ -58,4 +58,4 @@ const MobileHeaderModalMenu = [
   'Feedback',
   'Help',
   'Cancel',
-]
+];

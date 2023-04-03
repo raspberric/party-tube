@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 import {
   ClickAwayListener,
   MenuList,
   Paper,
   Popper,
   Divider,
-} from '@mui/material'
-import { PopperMenuTop } from './PopperMenuTop'
-import { PopperMenuBottom } from './PopperMenuBottom'
+} from '@mui/material';
+import { PopperMenuTop } from './PopperMenuTop';
+import { PopperMenuBottom } from './PopperMenuBottom';
 
 export const DesktopPopper = ({
   isPopupOpen,
@@ -36,5 +36,5 @@ export const DesktopPopper = ({
         </ClickAwayListener>
       </Paper>
     </Popper>
-  )
-}
+  );
+};

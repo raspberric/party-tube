@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import Drawer from '@mui/material/Drawer'
-import Toolbar from '@mui/material/Toolbar'
-import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined'
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
-import TextField from '@mui/material/TextField'
+import React from 'react';
+import styled from 'styled-components/macro';
+import Drawer from '@mui/material/Drawer';
+import Toolbar from '@mui/material/Toolbar';
+import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import TextField from '@mui/material/TextField';
 import {
   MOBILE_VIEW_HEADER_HEIGHT,
   DESKTOP_VIEW_HEADER_HEIGHT,
@@ -12,20 +12,20 @@ import {
   handleSearchFormSubmit,
   useClearSearchTerm,
   TWO_COL_MIN_WIDTH,
-} from '../../../utils/utils'
-import { useAtom } from 'jotai'
-import { searchTermAtom, searchResultsAtom } from '../../../store'
-import { useHistory } from 'react-router'
-import { DrawerSearchButton } from './DrawerSearchButton'
-import { DrawerClearButton } from './DrawerClearButton'
+} from '../../../utils/utils';
+import { useAtom } from 'jotai';
+import { searchTermAtom, searchResultsAtom } from '../../../store';
+import { useHistory } from 'react-router';
+import { DrawerSearchButton } from './DrawerSearchButton';
+import { DrawerClearButton } from './DrawerClearButton';
 
 const MobileViewSearchDrawer = ({
   isSearchDrawerOpen,
   setIsSearchDrawerOpen,
 }) => {
-  const [searchTerm, setSearchTerm] = useAtom(searchTermAtom)
-  const [, setSearchResults] = useAtom(searchResultsAtom)
-  const history = useHistory()
+  const [searchTerm, setSearchTerm] = useAtom(searchTermAtom);
+  const [, setSearchResults] = useAtom(searchResultsAtom);
+  const history = useHistory();
 
   const handleSubmit = (event) => {
     handleSearchFormSubmit(
@@ -33,12 +33,12 @@ const MobileViewSearchDrawer = ({
       searchTerm,
       setSearchResults,
       history,
-      true //useLocalData
-    )
-  }
+      true, //useLocalData
+    );
+  };
 
   // reset searchTerm when click on Home button and goes to landing page
-  useClearSearchTerm(history, setSearchTerm)
+  useClearSearchTerm(history, setSearchTerm);
 
   return (
     <Drawer
@@ -53,8 +53,8 @@ const MobileViewSearchDrawer = ({
         <form
           style={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}
           onSubmit={(e) => {
-            setIsSearchDrawerOpen(false)
-            handleSubmit(e)
+            setIsSearchDrawerOpen(false);
+            handleSubmit(e);
           }}
         >
           <MobileSearchField
@@ -70,10 +70,10 @@ const MobileViewSearchDrawer = ({
         </form>
       </DrawerToolbar>
     </Drawer>
-  )
-}
+  );
+};
 
-export default MobileViewSearchDrawer
+export default MobileViewSearchDrawer;
 
 const DrawerToolbar = styled(Toolbar)`
   && {
@@ -82,20 +82,20 @@ const DrawerToolbar = styled(Toolbar)`
       min-height: ${DESKTOP_VIEW_HEADER_HEIGHT}px;
     }
   }
-`
+`;
 
 const BackIcon = styled(ArrowBackOutlinedIcon)`
   color: #606060;
   margin: 12px;
-`
+`;
 
 const MobileSearchField = styled(TextField)`
   .MuiInputBase-input {
     font-size: ${DEFAULT_FONT_SIZE}px;
   }
-`
+`;
 
 export const MobileSearchIcon = styled(SearchOutlinedIcon)`
   color: #606060;
   /* margin: 8px; */
-`
+`;

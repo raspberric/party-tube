@@ -1,43 +1,43 @@
-import React, { useState, useRef } from 'react'
-import MoreVertIcon from '@mui/icons-material/MoreVert'
-import { StyledIconButton } from './VideoCard'
-import { useIsMobileView } from '../../utils/utils'
-import { MobileModal } from './MobileModal'
-import { DesktopPopper } from './DesktopPopper'
+import React, { useState, useRef } from 'react';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { StyledIconButton } from './VideoCard';
+import { useIsMobileView } from '../../utils/utils';
+import { MobileModal } from './MobileModal';
+import { DesktopPopper } from './DesktopPopper';
 
 export const MoreButton = ({ isSearchPage }) => {
-  const isMobileView = useIsMobileView()
+  const isMobileView = useIsMobileView();
   // states for Modal in mobile view
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const handleModalClose = () => setIsModalOpen(false)
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleModalClose = () => setIsModalOpen(false);
 
   // states for popup menu in desktop view
-  const [isPopupOpen, setIsPopupOpen] = useState(false)
-  const anchorRef = useRef(null)
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const anchorRef = useRef(null);
 
   const handlePopupClose = (event) => {
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
-      return
+      return;
     }
-    setIsPopupOpen(false)
-  }
+    setIsPopupOpen(false);
+  };
 
   function handleListKeyDown(event) {
     if (event.key === 'Tab') {
-      event.preventDefault()
-      setIsPopupOpen(false)
+      event.preventDefault();
+      setIsPopupOpen(false);
     }
   }
 
   // what is triggered onClick depends on the view
   const handleMoreIconClick = () => {
     if (isMobileView) {
-      setIsModalOpen(true)
+      setIsModalOpen(true);
     } else {
       // toggle if desktop view
-      setIsPopupOpen((prevOpen) => !prevOpen)
+      setIsPopupOpen((prevOpen) => !prevOpen);
     }
-  }
+  };
 
   return (
     <StyledIconButton disableRipple={true}>
@@ -55,5 +55,5 @@ export const MoreButton = ({ isSearchPage }) => {
       {/* mobile view modal */}
       <MobileModal {...{ isModalOpen, handleModalClose, isSearchPage }} />
     </StyledIconButton>
-  )
-}
+  );
+};

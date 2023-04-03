@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import Menu from '@mui/material/Menu'
-import Divider from '@mui/material/Divider'
-import { DEFAULT_FONT_SIZE } from '../../../../utils/utils'
-import { AppsMenuTop } from './AppsMenuTop'
-import { AppsMenuBottom } from './AppsMenuBottom'
-import { AppsMenuMiddle } from './AppsMenuMiddle'
+import React from 'react';
+import styled from 'styled-components/macro';
+import Menu from '@mui/material/Menu';
+import Divider from '@mui/material/Divider';
+import { DEFAULT_FONT_SIZE } from '../../../../utils/utils';
+import { AppsMenuTop } from './AppsMenuTop';
+import { AppsMenuBottom } from './AppsMenuBottom';
+import { AppsMenuMiddle } from './AppsMenuMiddle';
 
 const AppsMenu = ({ anchorAppsButton, handleAppsMenuClose }) => {
   return (
@@ -20,10 +20,10 @@ const AppsMenu = ({ anchorAppsButton, handleAppsMenuClose }) => {
       <Divider />
       <AppsMenuBottom onClick={handleAppsMenuClose} />
     </StyledAppsMenu>
-  )
-}
+  );
+};
 
-export default AppsMenu
+export default AppsMenu;
 
 const StyledAppsMenu = styled(({ className, ...props }) => (
   <Menu
@@ -50,4 +50,4 @@ const StyledAppsMenu = styled(({ className, ...props }) => (
   .MuiTypography-body1 {
     font-size: ${DEFAULT_FONT_SIZE}px;
   }
-`
+`;

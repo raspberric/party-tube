@@ -1,9 +1,9 @@
-import React from 'react'
-import BottomNavigation from '@mui/material/BottomNavigation'
-import styled from 'styled-components/macro'
-import { FooterIcons } from './FooterIcons'
-import useScrollTrigger from '@mui/material/useScrollTrigger'
-import Slide from '@mui/material/Slide'
+import React from 'react';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import styled from 'styled-components/macro';
+import { FooterIcons } from './FooterIcons';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+import Slide from '@mui/material/Slide';
 
 const MobileFooter = () => {
   return (
@@ -12,10 +12,10 @@ const MobileFooter = () => {
         <FooterIcons />
       </FooterContainer>
     </HideFooterOnScroll>
-  )
-}
+  );
+};
 
-export default MobileFooter
+export default MobileFooter;
 
 const FooterContainer = styled(BottomNavigation)`
   && {
@@ -29,15 +29,15 @@ const FooterContainer = styled(BottomNavigation)`
   .MuiBottomNavigationAction-root.MuiBottomNavigationAction-iconOnly {
     padding-top: 8px;
   }
-`
+`;
 function HideFooterOnScroll({ children }) {
   const shouldShowFooter = !useScrollTrigger({
     threshold: 200,
-  })
+  });
 
   return (
     <Slide in={shouldShowFooter} direction="up">
       {children}
     </Slide>
-  )
+  );
 }

@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import Popover from '@mui/material/Popover'
-import Paper from '@mui/material/Paper'
-import { NotificationsContent } from './NotificationsContent'
-import { NotificationsHeader } from './NotificationsHeader'
+import React from 'react';
+import styled from 'styled-components/macro';
+import Popover from '@mui/material/Popover';
+import Paper from '@mui/material/Paper';
+import { NotificationsContent } from './NotificationsContent';
+import { NotificationsHeader } from './NotificationsHeader';
 
 const NotificationsMenu = ({
   anchorNotificationsButton,
@@ -20,10 +20,10 @@ const NotificationsMenu = ({
         <NotificationsContent />
       </NotificationsContainer>
     </PopUpMenu>
-  )
-}
+  );
+};
 
-export default NotificationsMenu
+export default NotificationsMenu;
 
 const PopUpMenu = styled(({ className, ...props }) => (
   <Popover
@@ -55,11 +55,11 @@ const PopUpMenu = styled(({ className, ...props }) => (
   .MuiPaper-root {
     color: #030303;
   }
-`
+`;
 const NotificationsContainer = styled(Paper)`
   && {
     max-width: 100%;
     max-height: 100%;
     border-radius: 0;
   }
-`
+`;

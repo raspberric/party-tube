@@ -17,6 +17,6 @@ const countries = [
   { country: 'Australia', regionCode: 'AU' },
   { country: 'New Zealand', regionCode: 'NZ' },
   { country: 'Kazakhstan', regionCode: 'KZ' },
-]
+];
 
-export default countries
+export default countries;

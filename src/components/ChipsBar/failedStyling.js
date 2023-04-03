@@ -61,4 +61,4 @@ const TabsWithArrows = styled(Tabs)`
       );
     }
   }
-`
+`;

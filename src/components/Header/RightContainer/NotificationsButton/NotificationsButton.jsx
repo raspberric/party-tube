@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
-import NotificationsIconButton from './NotificationsIconButton'
-import NotificationsMenu from './NotificationsMenu'
+import React, { useState } from 'react';
+import NotificationsIconButton from './NotificationsIconButton';
+import NotificationsMenu from './NotificationsMenu';
 
 const NotificationsButton = () => {
   const [anchorNotificationsButton, setAnchorNotificationsButton] =
-    useState(null)
+    useState(null);
   const handleNotificationsMenuClose = () => {
-    setAnchorNotificationsButton(null)
-  }
+    setAnchorNotificationsButton(null);
+  };
   return (
     <>
       <NotificationsIconButton {...{ setAnchorNotificationsButton }} />
@@ -15,7 +15,7 @@ const NotificationsButton = () => {
         {...{ anchorNotificationsButton, handleNotificationsMenuClose }}
       />
     </>
-  )
-}
+  );
+};
 
-export default NotificationsButton
+export default NotificationsButton;
