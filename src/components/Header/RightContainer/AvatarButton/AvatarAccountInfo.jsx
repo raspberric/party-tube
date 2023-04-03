@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import Avatar from '@material-ui/core/Avatar'
-import Box from '@material-ui/core/Box'
-import Typography from '@material-ui/core/Typography'
+import Avatar from '@mui/material/Avatar'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
 import {
   DEFAULT_FONT_SIZE,
   TWO_COL_MIN_WIDTH,

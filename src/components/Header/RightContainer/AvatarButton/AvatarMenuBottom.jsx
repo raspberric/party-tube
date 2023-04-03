@@ -1,6 +1,6 @@
 import React from 'react'
-import ListItemText from '@material-ui/core/ListItemText'
-import ChevronRightIcon from '@material-ui/icons/ChevronRight'
+import ListItemText from '@mui/material/ListItemText'
+import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import { StyledMenuItem } from '../../../../utils/utils'
 
 export const AvatarMenuBottom = ({ onClick }) => {

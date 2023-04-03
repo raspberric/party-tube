@@ -1,4 +1,4 @@
-import { createTheme } from '@material-ui/core'
+import { createTheme, adaptV4Theme } from '@mui/material';
 import {
   FOUR_COL_MIN_WIDTH,
   SIX_COL_MIN_WIDTH,
@@ -6,7 +6,7 @@ import {
   TWO_COL_MIN_WIDTH,
 } from '../../utils/utils'
 
-export const columnBreakpoints = createTheme({
+export const columnBreakpoints = createTheme(adaptV4Theme({
   breakpoints: {
     values: {
       xs: 0,
@@ -17,4 +17,4 @@ export const columnBreakpoints = createTheme({
       xl: SIX_COL_MIN_WIDTH, // 6 column - 2 grids
     },
   },
-})
+}))

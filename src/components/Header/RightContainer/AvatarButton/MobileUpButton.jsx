@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import ArrowUpwardOutlinedIcon from '@material-ui/icons/ArrowUpwardOutlined'
-import Fab from '@material-ui/core/Fab'
+import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined'
+import Fab from '@mui/material/Fab'
 
 export const MobileUpButton = ({ onClick }) => {
   return (

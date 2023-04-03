@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import { TWO_COL_MIN_WIDTH } from '../../utils/utils'
-import Chip from '@material-ui/core/Chip'
+import Chip from '@mui/material/Chip'
 import countries from './chipsArray'
 
 export const Chips = ({

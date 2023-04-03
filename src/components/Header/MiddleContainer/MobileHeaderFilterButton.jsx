@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyledIconButton } from '../../../utils/utils'
-import TuneIcon from '@material-ui/icons/Tune'
+import TuneIcon from '@mui/icons-material/Tune'
 
 export const MobileHeaderFilterButton = () => {
   return (

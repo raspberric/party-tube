@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components/macro'
-import { ThemeProvider } from '@material-ui/styles'
-import { Grid } from '@material-ui/core'
+import { ThemeProvider, StyledEngineProvider } from '@mui/styles';
+import { Grid } from '@mui/material'
 import { columnBreakpoints } from '../components/Videos/columnBreakpoints'
 import {
   useIsMobileView,
@@ -84,30 +84,32 @@ const Videos = ({
     <OuterVideoContainer
       showFullSidebar={userSettingToShowFullSidebar}
     >
-      <ThemeProvider theme={columnBreakpoints}>
-        <InnerVideoContainer>
-          <InfiniteScroll
-            dataLength={landingPageVideos.length}
-            next={getPopularVideos}
-            hasMore={shouldGetMoreResults}
-            // overflow: auto from infinite scroll default causes scrolling problem
-            style={{ overflow: 'unset' }}
-          >
-            {/* change from here if remove loading-skeleton */}
-            <Grid container spacing={isMobileView ? 0 : 1}>
-              {isLoading
-                ? [...Array(VIDEOS_PER_QUERY)].map((_, index) => {
-                    return <GridItem key={`skeleton-${index}`} />
-                  })
-                : landingPageVideos.map((video) => {
-                    return <GridItem key={video.id} video={video} />
-                  })}
-            </Grid>
-          </InfiniteScroll>
-        </InnerVideoContainer>
-      </ThemeProvider>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={columnBreakpoints}>
+          <InnerVideoContainer>
+            <InfiniteScroll
+              dataLength={landingPageVideos.length}
+              next={getPopularVideos}
+              hasMore={shouldGetMoreResults}
+              // overflow: auto from infinite scroll default causes scrolling problem
+              style={{ overflow: 'unset' }}
+            >
+              {/* change from here if remove loading-skeleton */}
+              <Grid container spacing={isMobileView ? 0 : 1}>
+                {isLoading
+                  ? [...Array(VIDEOS_PER_QUERY)].map((_, index) => {
+                      return <GridItem key={`skeleton-${index}`} />
+                    })
+                  : landingPageVideos.map((video) => {
+                      return <GridItem key={video.id} video={video} />
+                    })}
+              </Grid>
+            </InfiniteScroll>
+          </InnerVideoContainer>
+        </ThemeProvider>
+      </StyledEngineProvider>
     </OuterVideoContainer>
-  )
+  );
 }
 
 export default Videos

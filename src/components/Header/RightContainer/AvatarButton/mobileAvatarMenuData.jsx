@@ -1,11 +1,11 @@
-import AccountBoxOutlinedIcon from '@material-ui/icons/AccountBoxOutlined'
-import MonetizationOnOutlinedIcon from '@material-ui/icons/MonetizationOnOutlined'
-import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined'
-import SupervisorAccountOutlinedIcon from '@material-ui/icons/SupervisorAccountOutlined'
-import SecurityOutlinedIcon from '@material-ui/icons/SecurityOutlined'
-import HelpOutlineOutlinedIcon from '@material-ui/icons/HelpOutlineOutlined'
-import FeedbackOutlinedIcon from '@material-ui/icons/FeedbackOutlined'
-import YouTubeIcon from '@material-ui/icons/YouTube'
+import AccountBoxOutlinedIcon from '@mui/icons-material/AccountBoxOutlined'
+import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined'
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
+import SupervisorAccountOutlinedIcon from '@mui/icons-material/SupervisorAccountOutlined'
+import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined'
+import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined'
+import FeedbackOutlinedIcon from '@mui/icons-material/FeedbackOutlined'
+import YouTubeIcon from '@mui/icons-material/YouTube'
 
 export const mobileMenuArray = [
   { Icon: AccountBoxOutlinedIcon, text: 'Your channel' },

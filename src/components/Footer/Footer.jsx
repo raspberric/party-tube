@@ -1,9 +1,9 @@
 import React from 'react'
-import BottomNavigation from '@material-ui/core/BottomNavigation'
+import BottomNavigation from '@mui/material/BottomNavigation'
 import styled from 'styled-components/macro'
 import { FooterIcons } from './FooterIcons'
-import useScrollTrigger from '@material-ui/core/useScrollTrigger'
-import Slide from '@material-ui/core/Slide'
+import useScrollTrigger from '@mui/material/useScrollTrigger'
+import Slide from '@mui/material/Slide'
 
 const MobileFooter = () => {
   return (

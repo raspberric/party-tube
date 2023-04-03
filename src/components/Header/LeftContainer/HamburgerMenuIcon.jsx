@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import MenuIcon from '@material-ui/icons/Menu'
+import MenuIcon from '@mui/icons-material/Menu'
 import { useAtom } from 'jotai'
 import {
   StyledIconButton,

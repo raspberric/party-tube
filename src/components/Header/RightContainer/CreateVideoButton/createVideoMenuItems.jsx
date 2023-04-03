@@ -1,5 +1,5 @@
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import WifiTetheringIcon from '@material-ui/icons/WifiTethering';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import WifiTetheringIcon from '@mui/icons-material/WifiTethering';
 
 export const createVideoMenuItems = [
   { Icon: PlayArrowIcon, text: 'Upload video' },

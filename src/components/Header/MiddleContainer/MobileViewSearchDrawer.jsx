@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import Drawer from '@material-ui/core/Drawer'
-import Toolbar from '@material-ui/core/Toolbar'
-import ArrowBackOutlinedIcon from '@material-ui/icons/ArrowBackOutlined'
-import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined'
-import TextField from '@material-ui/core/TextField'
+import Drawer from '@mui/material/Drawer'
+import Toolbar from '@mui/material/Toolbar'
+import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined'
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
+import TextField from '@mui/material/TextField'
 import {
   MOBILE_VIEW_HEADER_HEIGHT,
   DESKTOP_VIEW_HEADER_HEIGHT,

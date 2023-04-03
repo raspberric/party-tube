@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import Menu from '@material-ui/core/Menu'
-import ListItemText from '@material-ui/core/ListItemText'
+import Menu from '@mui/material/Menu'
+import ListItemText from '@mui/material/ListItemText'
 import {
   DEFAULT_FONT_SIZE,
   StyledMenuItem,

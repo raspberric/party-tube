@@ -1,5 +1,5 @@
 import React from 'react'
-import AppsIcon from '@material-ui/icons/Apps'
+import AppsIcon from '@mui/icons-material/Apps'
 import { StyledIconButton, IconTooltip } from '../../../../utils/utils'
 
 function AppsIconButton({ setAnchorAppsButton }) {

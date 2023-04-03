@@ -1,5 +1,5 @@
 import React from 'react';
-import ListItemText from '@material-ui/core/ListItemText';
+import ListItemText from '@mui/material/ListItemText';
 import { StyledMenuItem, StyledListItemIcon } from '../../../../utils/utils';
 export const AppsMenuRow = ({ Icon, text, onClick }) => {
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyledIconButton } from '../../../utils/utils'
-import ClearIcon from '@material-ui/icons/Clear'
+import ClearIcon from '@mui/icons-material/Clear'
 
 export const DrawerClearButton = ({ setSearchTerm }) => {
   return (

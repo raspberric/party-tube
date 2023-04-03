@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import Avatar from '@material-ui/core/Avatar'
+import Avatar from '@mui/material/Avatar'
 import { StyledIconButton, TWO_COL_MIN_WIDTH } from '../../../../utils/utils'
 
 function AvatarIconButton({ setAnchorAvatarButton }) {
