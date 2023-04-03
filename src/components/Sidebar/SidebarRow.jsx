@@ -1,6 +1,6 @@
 import { SidebarMenuItem } from './FullWidthSidebar'
 import { StyledListItemIcon } from '../../utils/utils'
-import ListItemText from '@material-ui/core/ListItemText'
+import ListItemText from '@mui/material/ListItemText'
 import { isSidebarDrawerOpenAtom } from '../../store'
 import { useAtom } from 'jotai'
 import { Link } from 'react-router-dom'

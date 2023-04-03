@@ -1,12 +1,12 @@
 import React from 'react'
 import { OuterVideoContainer as SearchContainer } from './LandingPage'
-import { List } from '@material-ui/core'
+import { List } from '@mui/material'
 import styled from 'styled-components/macro'
 import ResultsVideoCard from '../components/Search/ResultsVideoCard'
 import { searchResultsAtom } from '../store'
 import { useAtom } from 'jotai'
 import { TWO_COL_MIN_WIDTH, useIsMobileView } from '../utils/utils'
-import TuneIcon from '@material-ui/icons/Tune'
+import TuneIcon from '@mui/icons-material/Tune'
 import { FilterButton } from '../components/Search/FilterButton'
 import { userSettingToShowFullSidebarAtom } from '../store'
 
@@ -23,7 +23,6 @@ const SearchPage = () => {
         {!isMobileView && (
           <FilterButton
             variant="contained"
-            color="default"
             startIcon={<TuneIcon />}
             disableElevation
             disableRipple

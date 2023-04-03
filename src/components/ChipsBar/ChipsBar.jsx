@@ -1,5 +1,5 @@
 import React from 'react'
-import Tabs from '@material-ui/core/Tabs'
+import Tabs from '@mui/material/Tabs'
 import styled from 'styled-components/macro'
 import {
   HideOnScroll,
@@ -34,7 +34,7 @@ const ChipsBar = ({
       >
         <StyledTabs
           variant="scrollable"
-          scrollButtons="off"
+          scrollButtons={false}
           // indicatorColor="none"
           textColor="primary"
           value={0}

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import Popover from '@material-ui/core/Popover'
-import Paper from '@material-ui/core/Paper'
+import Popover from '@mui/material/Popover'
+import Paper from '@mui/material/Paper'
 import { NotificationsContent } from './NotificationsContent'
 import { NotificationsHeader } from './NotificationsHeader'
 

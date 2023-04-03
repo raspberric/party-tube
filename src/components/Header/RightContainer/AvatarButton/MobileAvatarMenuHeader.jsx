@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import Paper from '@material-ui/core/Paper'
-import Typography from '@material-ui/core/Typography'
-import CloseOutlinedIcon from '@material-ui/icons/CloseOutlined'
+import Paper from '@mui/material/Paper'
+import Typography from '@mui/material/Typography'
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined'
 
 export const MobileAvatarMenuHeader = ({ onClick }) => {
   return (

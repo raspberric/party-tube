@@ -1,4 +1,4 @@
-import { createTheme } from '@material-ui/core'
+import { createTheme } from '@mui/material';
 import {
   FOUR_COL_MIN_WIDTH,
   SIX_COL_MIN_WIDTH,
@@ -17,4 +17,4 @@ export const columnBreakpoints = createTheme({
       xl: SIX_COL_MIN_WIDTH, // 6 column - 2 grids
     },
   },
-})
+});

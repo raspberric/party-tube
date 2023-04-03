@@ -1,8 +1,8 @@
 import React from 'react'
-import { Typography } from '@material-ui/core'
+import { Typography } from '@mui/material'
 import styled from 'styled-components/macro'
 import { StyledIconButton } from '../../../utils/utils'
-import TuneIcon from '@material-ui/icons/Tune'
+import TuneIcon from '@mui/icons-material/Tune'
 
 export const MobileSearchTermContainer = ({
   setIsSearchDrawerOpen,

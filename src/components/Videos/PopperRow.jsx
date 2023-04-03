@@ -1,7 +1,7 @@
 import React from 'react'
-import { MenuItem } from '@material-ui/core'
+import { MenuItem } from '@mui/material'
 import { StyledListItemIcon } from '../../utils/utils'
-import ListItemText from '@material-ui/core/ListItemText'
+import ListItemText from '@mui/material/ListItemText'
 
 export const PopperRow = ({ Icon, text, onClick }) => {
   return (

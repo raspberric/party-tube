@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import YouTubeIcon from '@material-ui/icons/YouTube'
-import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline'
+import YouTubeIcon from '@mui/icons-material/YouTube'
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
 
 const RedYouTubeIcon = styled(YouTubeIcon)`
   color: red;

@@ -1,7 +1,7 @@
 import React from 'react'
-import Modal from '@material-ui/core/Modal'
+import Modal from '@mui/material/Modal'
 import styled from 'styled-components/macro'
-import { List, ListItem, Typography } from '@material-ui/core'
+import { List, ListItem, Typography } from '@mui/material'
 
 export const MobileModal = ({
   isModalOpen,

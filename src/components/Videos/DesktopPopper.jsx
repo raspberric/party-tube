@@ -5,7 +5,7 @@ import {
   Paper,
   Popper,
   Divider,
-} from '@material-ui/core'
+} from '@mui/material'
 import { PopperMenuTop } from './PopperMenuTop'
 import { PopperMenuBottom } from './PopperMenuBottom'
 

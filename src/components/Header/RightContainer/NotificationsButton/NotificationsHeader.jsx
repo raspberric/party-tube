@@ -1,20 +1,20 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import Box from '@material-ui/core/Box'
-import Typography from '@material-ui/core/Typography'
-import IconButton from '@material-ui/core/IconButton'
-import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import IconButton from '@mui/material/IconButton'
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
 import { NOTIFICATION_MENU_TOP_HEIGHT } from '../../../../utils/utils'
 
 export function NotificationsHeader({ onClick }) {
   return (
     <NotificationsMenuTop>
       <Typography>Notifications</Typography>
-      <IconButton onClick={onClick}>
+      <IconButton onClick={onClick} size="large">
         <SettingsOutlinedIcon />
       </IconButton>
     </NotificationsMenuTop>
-  )
+  );
 }
 const NotificationsMenuTop = styled(Box)`
   display: flex;

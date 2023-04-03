@@ -1,4 +1,4 @@
-import PlaylistPlayOutlinedIcon from '@material-ui/icons/PlaylistPlayOutlined'
+import PlaylistPlayOutlinedIcon from '@mui/icons-material/PlaylistPlayOutlined'
 import { SidebarRow } from './SidebarRow'
 
 export const SidebarTopMenuSection3 = () => {
