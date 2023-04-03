@@ -34,7 +34,7 @@ const ChipsBar = ({
       >
         <StyledTabs
           variant="scrollable"
-          scrollButtons="false"
+          scrollButtons={false}
           // indicatorColor="none"
           textColor="primary"
           value={0}
