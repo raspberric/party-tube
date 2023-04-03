@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import { Typography } from '@mui/material'
-import { TWO_COL_MIN_WIDTH, useIsMobileView } from '../../utils/utils'
-import moment from 'moment'
-import numeral from 'numeral'
+import React from 'react';
+import styled from 'styled-components/macro';
+import { Typography } from '@mui/material';
+import { TWO_COL_MIN_WIDTH, useIsMobileView } from '../../utils/utils';
+import moment from 'moment';
+import numeral from 'numeral';
 
 export const ChannelDetails = ({
   channelTitle,
@@ -11,7 +11,7 @@ export const ChannelDetails = ({
   viewCount,
   isSearchPage,
 }) => {
-  const isMobileView = useIsMobileView()
+  const isMobileView = useIsMobileView();
 
   if (isMobileView) {
     return (
@@ -29,7 +29,7 @@ export const ChannelDetails = ({
           <Stats {...{ viewCount, publishedAt }} />
         </StatsContainer>
       </ChannelDetailsContainer>
-    )
+    );
   } else {
     return (
       <ChannelDetailsContainer>
@@ -39,9 +39,9 @@ export const ChannelDetails = ({
           <Stats {...{ viewCount, publishedAt }} />
         </StatsContainer>
       </ChannelDetailsContainer>
-    )
+    );
   }
-}
+};
 
 const Stats = ({ viewCount, publishedAt }) => {
   return (
@@ -51,8 +51,8 @@ const Stats = ({ viewCount, publishedAt }) => {
       </span>
       <span>{moment(publishedAt).fromNow()}</span>
     </>
-  )
-}
+  );
+};
 
 const ChannelDetailsContainer = styled.div`
   && {
@@ -63,7 +63,7 @@ const ChannelDetailsContainer = styled.div`
       line-height: 18px;
     }
   }
-`
+`;
 
 const ChannelName = styled(Typography)`
   && {
@@ -80,13 +80,13 @@ const ChannelName = styled(Typography)`
       text-overflow: ellipsis;
     }
   }
-`
+`;
 
 const SearchChannelName = styled(ChannelName)`
   && {
     display: block;
   }
-`
+`;
 
 const StatsContainer = styled.div`
   opacity: 0.6;
@@ -96,11 +96,11 @@ const StatsContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
   }
-`
+`;
 
 export const DotSeparator = () => {
-  return <span>•</span>
-}
+  return <span>•</span>;
+};
 
 // change 'a' & 'an' to '1'
 moment.updateLocale('en', {
@@ -122,4 +122,4 @@ moment.updateLocale('en', {
     y: '1 year',
     yy: '%d years',
   },
-})
+});

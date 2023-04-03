@@ -1,5 +1,5 @@
-import React from 'react'
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import React from 'react';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 export const VideoSkeleton = () => {
   return (
@@ -17,5 +17,5 @@ export const VideoSkeleton = () => {
         </div>
       </SkeletonTheme>
     </div>
-  )
-}
+  );
+};

@@ -1,13 +1,13 @@
-import PlaylistPlayOutlinedIcon from '@mui/icons-material/PlaylistPlayOutlined'
-import { SidebarRow } from './SidebarRow'
+import PlaylistPlayOutlinedIcon from '@mui/icons-material/PlaylistPlayOutlined';
+import { SidebarRow } from './SidebarRow';
 
 export const SidebarTopMenuSection3 = () => {
   return catBreed.map((breed) => {
     return (
       <SidebarRow key={breed} Icon={PlaylistPlayOutlinedIcon} text={breed} />
-    )
-  })
-}
+    );
+  });
+};
 
 const catBreed = [
   'Kitten',
@@ -28,4 +28,4 @@ const catBreed = [
   'Scottish Fold',
   'Panther',
   'Burmese cat',
-]
+];

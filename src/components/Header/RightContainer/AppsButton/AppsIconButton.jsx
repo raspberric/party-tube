@@ -1,6 +1,6 @@
-import React from 'react'
-import AppsIcon from '@mui/icons-material/Apps'
-import { StyledIconButton, IconTooltip } from '../../../../utils/utils'
+import React from 'react';
+import AppsIcon from '@mui/icons-material/Apps';
+import { StyledIconButton, IconTooltip } from '../../../../utils/utils';
 
 function AppsIconButton({ setAnchorAppsButton }) {
   return (
@@ -11,7 +11,7 @@ function AppsIconButton({ setAnchorAppsButton }) {
         <AppsIcon />
       </StyledIconButton>
     </IconTooltip>
-  )
+  );
 }
 
-export default AppsIconButton
+export default AppsIconButton;

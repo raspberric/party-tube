@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import Avatar from '@mui/material/Avatar'
-import { StyledIconButton, TWO_COL_MIN_WIDTH } from '../../../../utils/utils'
+import React from 'react';
+import styled from 'styled-components/macro';
+import Avatar from '@mui/material/Avatar';
+import { StyledIconButton, TWO_COL_MIN_WIDTH } from '../../../../utils/utils';
 
 function AvatarIconButton({ setAnchorAvatarButton }) {
   return (
@@ -10,10 +10,10 @@ function AvatarIconButton({ setAnchorAvatarButton }) {
     >
       <StyledAvatar>C</StyledAvatar>
     </StyledIconButton>
-  )
+  );
 }
 
-export default AvatarIconButton
+export default AvatarIconButton;
 
 const StyledAvatar = styled(Avatar)`
   && {
@@ -26,4 +26,4 @@ const StyledAvatar = styled(Avatar)`
       height: 32px;
     }
   }
-`
+`;

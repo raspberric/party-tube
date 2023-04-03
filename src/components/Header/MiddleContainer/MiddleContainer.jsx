@@ -1,37 +1,37 @@
-import React, { useEffect, useState } from 'react'
-import { useMediaQuery } from '@mui/material'
-import styled from 'styled-components/macro'
+import React, { useEffect, useState } from 'react';
+import { useMediaQuery } from '@mui/material';
+import styled from 'styled-components/macro';
 import {
   SHOW_SEARCH_BOX_BREAKPOINT,
   useIsMobileView,
   handleSearchFormSubmit as querySearchOnReload,
-} from '../../../utils/utils'
-import MobileViewSearchDrawer from './MobileViewSearchDrawer'
-import { SearchContainerWithTextField } from './SearchContainerWithTextField'
-import { MicButton } from './MicButton'
-import { SearchButton } from './SearchButton'
-import { useLocation, useHistory } from 'react-router'
-import { useAtom } from 'jotai'
-import { searchResultsAtom, searchTermAtom } from '../../../store'
-import { MobileSearchTermContainer } from './MobileSearchTermContainer'
+} from '../../../utils/utils';
+import MobileViewSearchDrawer from './MobileViewSearchDrawer';
+import { SearchContainerWithTextField } from './SearchContainerWithTextField';
+import { MicButton } from './MicButton';
+import { SearchButton } from './SearchButton';
+import { useLocation, useHistory } from 'react-router';
+import { useAtom } from 'jotai';
+import { searchResultsAtom, searchTermAtom } from '../../../store';
+import { MobileSearchTermContainer } from './MobileSearchTermContainer';
 
 const MiddleContainer = () => {
-  const isMobileView = useIsMobileView()
+  const isMobileView = useIsMobileView();
   const showSearchBox = useMediaQuery(
-    `(min-width: ${SHOW_SEARCH_BOX_BREAKPOINT}px)`
-  )
-  const [isSearchDrawerOpen, setIsSearchDrawerOpen] = useState(false)
+    `(min-width: ${SHOW_SEARCH_BOX_BREAKPOINT}px)`,
+  );
+  const [isSearchDrawerOpen, setIsSearchDrawerOpen] = useState(false);
 
-  const currentLocation = useLocation()
-  const isInSearchResultsPage = currentLocation.pathname === '/results'
+  const currentLocation = useLocation();
+  const isInSearchResultsPage = currentLocation.pathname === '/results';
   // retrieve the search term appears in URL
   const searchTermFromUrl = new URLSearchParams(currentLocation.search).get(
-    'search_query'
-  )
+    'search_query',
+  );
 
-  const [, setSearchResults] = useAtom(searchResultsAtom)
-  const [, setSearchTerm] = useAtom(searchTermAtom)
-  const history = useHistory()
+  const [, setSearchResults] = useAtom(searchResultsAtom);
+  const [, setSearchTerm] = useAtom(searchTermAtom);
+  const history = useHistory();
 
   // update searchResults and searchTerm if page is refresh, or if clicked on browser's forward and back button
   useEffect(() => {
@@ -42,27 +42,27 @@ const MiddleContainer = () => {
         setSearchResults,
         history,
         true, // useLocalStorage
-        false //pushHistory
-      )
+        false, //pushHistory
+      );
       // update the searchTerm so search box value displayed correct
-      setSearchTerm(searchTermFromUrl)
+      setSearchTerm(searchTermFromUrl);
     }
-  }, [setSearchTerm, searchTermFromUrl, setSearchResults, history])
+  }, [setSearchTerm, searchTermFromUrl, setSearchResults, history]);
 
   // reset isSearchDrawerOpen to false when >= 657px
   useEffect(() => {
     const resizeListener = () => {
       if (window.innerWidth >= SHOW_SEARCH_BOX_BREAKPOINT) {
-        setIsSearchDrawerOpen(false)
+        setIsSearchDrawerOpen(false);
       }
-    }
+    };
 
-    window.addEventListener('resize', resizeListener)
+    window.addEventListener('resize', resizeListener);
 
     return () => {
-      window.removeEventListener('resize', resizeListener)
-    }
-  })
+      window.removeEventListener('resize', resizeListener);
+    };
+  });
 
   if (isMobileView) {
     return (
@@ -78,7 +78,7 @@ const MiddleContainer = () => {
           {...{ isSearchDrawerOpen, setIsSearchDrawerOpen }}
         />
       </StyledMiddleContainer>
-    )
+    );
   } else {
     return (
       <StyledMiddleContainer>
@@ -95,11 +95,11 @@ const MiddleContainer = () => {
         )}
         <MicButton />
       </StyledMiddleContainer>
-    )
+    );
   }
-}
+};
 
-export default MiddleContainer
+export default MiddleContainer;
 
 const StyledMiddleContainer = styled.div`
   color: #030303;
@@ -113,4 +113,4 @@ const StyledMiddleContainer = styled.div`
     justify-content: center;
     margin-right: 2rem;
   }
-`
+`;

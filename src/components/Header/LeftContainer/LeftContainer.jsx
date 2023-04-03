@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import YouTubeLogo from './YouTubeLogo'
-import SidebarDrawer from '../../Sidebar/SidebarDrawer'
-import HamburgerMenuIcon from './HamburgerMenuIcon'
-import { useIsMobileView } from '../../../utils/utils'
+import React from 'react';
+import styled from 'styled-components/macro';
+import YouTubeLogo from './YouTubeLogo';
+import SidebarDrawer from '../../Sidebar/SidebarDrawer';
+import HamburgerMenuIcon from './HamburgerMenuIcon';
+import { useIsMobileView } from '../../../utils/utils';
 
 const LeftContainer = () => {
-  const isMobileView = useIsMobileView()
+  const isMobileView = useIsMobileView();
 
   return (
     <StyledLeftContainer>
@@ -15,9 +15,9 @@ const LeftContainer = () => {
       <YouTubeLogo />
       <SidebarDrawer />
     </StyledLeftContainer>
-  )
-}
-export default LeftContainer
+  );
+};
+export default LeftContainer;
 
 const StyledLeftContainer = styled.div`
   color: #030303;
@@ -26,4 +26,4 @@ const StyledLeftContainer = styled.div`
   align-items: center;
   flex-grow: 0;
   flex-wrap: nowrap;
-`
+`;

@@ -1,22 +1,22 @@
-import React, { useState } from 'react'
-import styled from 'styled-components/macro'
-import ListItemText from '@mui/material/ListItemText'
-import ListItemAvatar from '@mui/material/ListItemAvatar'
-import Avatar from '@mui/material/Avatar'
-import { ShowMoreRow } from './ShowMoreRow'
-import { ShowLessRow } from './ShowLessRow'
-import { SubHeading, SidebarMenuItem } from './FullWidthSidebar'
-import { isSidebarDrawerOpenAtom } from '../../store'
-import { useAtom } from 'jotai'
+import React, { useState } from 'react';
+import styled from 'styled-components/macro';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Avatar from '@mui/material/Avatar';
+import { ShowMoreRow } from './ShowMoreRow';
+import { ShowLessRow } from './ShowLessRow';
+import { SubHeading, SidebarMenuItem } from './FullWidthSidebar';
+import { isSidebarDrawerOpenAtom } from '../../store';
+import { useAtom } from 'jotai';
 
 export const SidebarSecondPart = () => {
-  const [isExpanded, setIsExpanded] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(false);
   const expandMenu = () => {
-    setIsExpanded(true)
-  }
+    setIsExpanded(true);
+  };
   const collapseMenu = () => {
-    setIsExpanded(false)
-  }
+    setIsExpanded(false);
+  };
   return (
     <>
       <SubHeading>SUBSCRIPTIONS</SubHeading>
@@ -24,7 +24,7 @@ export const SidebarSecondPart = () => {
       {isExpanded ? (
         <>
           {[...Array(5)].map((_, index) => {
-            return <SubscriptionItem key={`subscriptions-${index}`} />
+            return <SubscriptionItem key={`subscriptions-${index}`} />;
           })}
           <ShowLessRow onClick={collapseMenu} />
         </>
@@ -32,11 +32,11 @@ export const SidebarSecondPart = () => {
         <ShowMoreRow onClick={expandMenu} />
       )}
     </>
-  )
-}
+  );
+};
 
 const SubscriptionItem = () => {
-  const [, setIsSidebarDrawerOpen] = useAtom(isSidebarDrawerOpenAtom)
+  const [, setIsSidebarDrawerOpen] = useAtom(isSidebarDrawerOpenAtom);
   return (
     <SidebarMenuItem onClick={() => setIsSidebarDrawerOpen(false)}>
       <StyledListItemAvatar>
@@ -44,15 +44,15 @@ const SubscriptionItem = () => {
       </StyledListItemAvatar>
       <ListItemText primary="coding-guy" />
     </SidebarMenuItem>
-  )
-}
+  );
+};
 
 const StyledListItemAvatar = styled(ListItemAvatar)`
   && {
     min-width: 0;
     margin-right: 24px;
   }
-`
+`;
 const StyledAvatar = styled(Avatar)`
   && {
     width: 24px;
@@ -60,4 +60,4 @@ const StyledAvatar = styled(Avatar)`
     font-size: 0.75rem;
     background-color: #ef6c00;
   }
-`
+`;

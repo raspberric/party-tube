@@ -1,25 +1,25 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import Divider from '@mui/material/Divider'
-import Typography from '@mui/material/Typography'
+import React from 'react';
+import styled from 'styled-components/macro';
+import Divider from '@mui/material/Divider';
+import Typography from '@mui/material/Typography';
 import {
   FULL_SIDEBAR_WIDTH,
   StyledMenuItem,
   useShouldOpenSidebarDrawer,
   DESKTOP_VIEW_HEADER_HEIGHT,
-} from '../../utils/utils'
-import { SidebarFirstPart } from './SidebarFirstPart'
-import { SidebarSecondPart } from './SidebarSecondPart'
-import { SidebarThirdPart } from './SidebarThirdPart'
-import { CUSTOM_SCROLLBAR_CSS } from '../../CUSTOM_SCROLLBAR_CSS'
-import { useLocation } from 'react-router-dom'
-import { isSidebarDrawerOpenAtom } from '../../store'
-import { useAtom } from 'jotai'
+} from '../../utils/utils';
+import { SidebarFirstPart } from './SidebarFirstPart';
+import { SidebarSecondPart } from './SidebarSecondPart';
+import { SidebarThirdPart } from './SidebarThirdPart';
+import { CUSTOM_SCROLLBAR_CSS } from '../../CUSTOM_SCROLLBAR_CSS';
+import { useLocation } from 'react-router-dom';
+import { isSidebarDrawerOpenAtom } from '../../store';
+import { useAtom } from 'jotai';
 
 const FullWidthSidebar = () => {
-  const shouldOpenSidebarDrawer = useShouldOpenSidebarDrawer()
-  const isInSearchResultsPage = useLocation().pathname === '/results'
-  const [isSidebarDrawerOpen] = useAtom(isSidebarDrawerOpenAtom)
+  const shouldOpenSidebarDrawer = useShouldOpenSidebarDrawer();
+  const isInSearchResultsPage = useLocation().pathname === '/results';
+  const [isSidebarDrawerOpen] = useAtom(isSidebarDrawerOpenAtom);
 
   return (
     <StyledFullWidthSidebar
@@ -34,10 +34,10 @@ const FullWidthSidebar = () => {
       <DividerWithMargin />
       <SidebarThirdPart />
     </StyledFullWidthSidebar>
-  )
-}
+  );
+};
 
-export default FullWidthSidebar
+export default FullWidthSidebar;
 
 const StyledFullWidthSidebar = styled.div`
   position: ${({ isFullSidebar }) => (isFullSidebar ? `fixed` : null)};
@@ -55,13 +55,13 @@ const StyledFullWidthSidebar = styled.div`
     /* scrollbar only visible when hover on FullSidebar. In drawer sidebar always visible */
     ${({ isDrawer }) => !isDrawer && CUSTOM_SCROLLBAR_CSS}
   }
-`
+`;
 
 export const DividerWithMargin = styled(Divider)`
   && {
     margin: 12px 0;
   }
-`
+`;
 
 export const SubHeading = styled(Typography)`
   && {
@@ -70,7 +70,7 @@ export const SubHeading = styled(Typography)`
     padding: 8px 24px;
     color: #606060;
   }
-`
+`;
 export const SidebarMenuItem = styled(StyledMenuItem)`
   && {
     padding: 0 24px;
@@ -84,4 +84,4 @@ export const SidebarMenuItem = styled(StyledMenuItem)`
     font-size: 14px;
     color: #030303;
   }
-`
+`;

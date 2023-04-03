@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
-import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined'
-import { NOTIFICATION_MENU_TOP_HEIGHT } from '../../../../utils/utils'
+import React from 'react';
+import styled from 'styled-components/macro';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
+import { NOTIFICATION_MENU_TOP_HEIGHT } from '../../../../utils/utils';
 
 export const NotificationsContent = () => {
   return (
@@ -15,15 +15,15 @@ export const NotificationsContent = () => {
         their latest videos.
       </Content>
     </ContentContainer>
-  )
-}
+  );
+};
 
 const ContentContainer = styled(Box)`
   display: grid;
   place-items: center;
   max-height: calc(100% - ${NOTIFICATION_MENU_TOP_HEIGHT}px);
   text-align: center;
-`
+`;
 
 const BigBellIcon = styled(NotificationsNoneOutlinedIcon)`
   && {
@@ -34,14 +34,14 @@ const BigBellIcon = styled(NotificationsNoneOutlinedIcon)`
   font-weight: 100;
   margin-bottom: 1.5rem;
   margin-top: 3rem;
-`
+`;
 
 const Title = styled(Typography)`
   && {
     font-weight: bold;
     margin-bottom: 8px;
   }
-`
+`;
 
 const Content = styled(Typography)`
   && {
@@ -49,4 +49,4 @@ const Content = styled(Typography)`
     margin: auto;
     margin-bottom: 3rem;
   }
-`
+`;

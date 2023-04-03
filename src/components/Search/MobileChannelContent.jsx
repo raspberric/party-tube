@@ -1,9 +1,9 @@
-import React from 'react'
-import he from 'he'
-import numeral from 'numeral'
-import styled from 'styled-components/macro'
-import { TWO_COL_MIN_WIDTH } from '../../utils/utils'
-import { SearchCardHeader, SearchVideoTitle } from './searchUtils'
+import React from 'react';
+import he from 'he';
+import numeral from 'numeral';
+import styled from 'styled-components/macro';
+import { TWO_COL_MIN_WIDTH } from '../../utils/utils';
+import { SearchCardHeader, SearchVideoTitle } from './searchUtils';
 
 export const MobileChannelContent = ({
   channelTitle,
@@ -15,8 +15,8 @@ export const MobileChannelContent = ({
       title={<Title {...{ channelTitle }} />}
       subheader={<Stats {...{ isMobileView, channelInfo }} />}
     />
-  )
-}
+  );
+};
 
 const Stats = ({ isMobileView, channelInfo }) => {
   return (
@@ -33,14 +33,14 @@ const Stats = ({ isMobileView, channelInfo }) => {
         </>
       )}
     </ChannelStatsContainer>
-  )
-}
+  );
+};
 
 const Title = ({ channelTitle }) => {
   return (
     <SearchVideoTitle variant="h4">{he.decode(channelTitle)}</SearchVideoTitle>
-  )
-}
+  );
+};
 
 const ChannelStatsContainer = styled.div`
   opacity: 0.6;
@@ -52,4 +52,4 @@ const ChannelStatsContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
   }
-`
+`;

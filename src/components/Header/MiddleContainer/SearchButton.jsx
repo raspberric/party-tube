@@ -1,6 +1,6 @@
-import React from 'react'
-import SearchIcon from '@mui/icons-material/Search'
-import { IconTooltip, StyledIconButton } from '../../../utils/utils'
+import React from 'react';
+import SearchIcon from '@mui/icons-material/Search';
+import { IconTooltip, StyledIconButton } from '../../../utils/utils';
 
 export const SearchButton = ({ setIsSearchDrawerOpen }) => {
   return (
@@ -9,5 +9,5 @@ export const SearchButton = ({ setIsSearchDrawerOpen }) => {
         <SearchIcon />
       </StyledIconButton>
     </IconTooltip>
-  )
-}
+  );
+};

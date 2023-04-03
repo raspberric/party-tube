@@ -1,9 +1,8 @@
-import React from 'react'
-import VideoCallIcon from '@mui/icons-material/VideoCall'
-import { IconTooltip, StyledIconButton } from '../../../../utils/utils'
+import React from 'react';
+import VideoCallIcon from '@mui/icons-material/VideoCall';
+import { IconTooltip, StyledIconButton } from '../../../../utils/utils';
 
 function CreateVideoIconButton({ setAnchorVideoButton }) {
-
   return (
     <IconTooltip title="Create">
       <StyledIconButton
@@ -12,7 +11,7 @@ function CreateVideoIconButton({ setAnchorVideoButton }) {
         <VideoCallIcon />
       </StyledIconButton>
     </IconTooltip>
-  )
+  );
 }
 
-export default CreateVideoIconButton
+export default CreateVideoIconButton;

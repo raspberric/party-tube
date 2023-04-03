@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import Popover from '@mui/material/Popover'
-import Divider from '@mui/material/Divider'
-import { AvatarAccountInfo } from './AvatarAccountInfo'
-import { AvatarMenuTop } from './AvatarMenuTop'
-import { AvatarMenuMiddle } from './AvatarMenuMiddle'
-import { AvatarMenuBottom } from './AvatarMenuBottom'
+import React from 'react';
+import styled from 'styled-components/macro';
+import Popover from '@mui/material/Popover';
+import Divider from '@mui/material/Divider';
+import { AvatarAccountInfo } from './AvatarAccountInfo';
+import { AvatarMenuTop } from './AvatarMenuTop';
+import { AvatarMenuMiddle } from './AvatarMenuMiddle';
+import { AvatarMenuBottom } from './AvatarMenuBottom';
 
 export function AvatarPopUpMenu({ anchorAvatarButton, handleAvatarMenuClose }) {
   return (
@@ -22,7 +22,7 @@ export function AvatarPopUpMenu({ anchorAvatarButton, handleAvatarMenuClose }) {
       <Divider />
       <AvatarMenuBottom onClick={handleAvatarMenuClose} />
     </StyledAvatarMenu>
-  )
+  );
 }
 const StyledAvatarMenu = styled(({ className, ...props }) => (
   <Popover
@@ -53,4 +53,4 @@ const StyledAvatarMenu = styled(({ className, ...props }) => (
   .MuiTypography-body1 {
     font-size: 14px;
   }
-`
+`;

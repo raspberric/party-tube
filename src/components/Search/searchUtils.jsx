@@ -1,16 +1,16 @@
-import { useEffect } from 'react'
-import { request } from '../../utils/api'
-import styled from 'styled-components/macro'
-import { Typography, Avatar } from '@mui/material'
-import { StyledCardHeader, VideoTitle } from '../Videos/VideoCard'
-import { TWO_COL_MIN_WIDTH } from '../../utils/utils'
+import { useEffect } from 'react';
+import { request } from '../../utils/api';
+import styled from 'styled-components/macro';
+import { Typography, Avatar } from '@mui/material';
+import { StyledCardHeader, VideoTitle } from '../Videos/VideoCard';
+import { TWO_COL_MIN_WIDTH } from '../../utils/utils';
 
 // this is unique to searchResults, because popular videos no need to get more details from 'contentDetails,statistics'
 const getVideoDetails = async (
   useLocalStorage,
   videoId,
   durationSetterFunction,
-  viewCountSetterFunction
+  viewCountSetterFunction,
 ) => {
   try {
     const {
@@ -20,58 +20,60 @@ const getVideoDetails = async (
         part: 'contentDetails,statistics',
         id: videoId,
       },
-    })
-    durationSetterFunction(items[0].contentDetails.duration)
-    viewCountSetterFunction(items[0].statistics.viewCount)
+    });
+    durationSetterFunction(items[0].contentDetails.duration);
+    viewCountSetterFunction(items[0].statistics.viewCount);
 
     if (useLocalStorage) {
       localStorage.setItem(
         `${videoId}_duration`,
-        JSON.stringify(items[0].contentDetails.duration)
-      )
+        JSON.stringify(items[0].contentDetails.duration),
+      );
       localStorage.setItem(
         `${videoId}_viewCount`,
-        JSON.stringify(items[0].statistics.viewCount)
-      )
+        JSON.stringify(items[0].statistics.viewCount),
+      );
     }
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
 export const useGetVideoDetails = (
   useLocalStorage,
   videoId,
   durationSetterFunction,
-  viewCountSetterFunction
+  viewCountSetterFunction,
 ) => {
   useEffect(() => {
-    let storedDuration
-    let storedViewCount
+    let storedDuration;
+    let storedViewCount;
 
     if (useLocalStorage) {
-      storedDuration = JSON.parse(localStorage.getItem(`${videoId}_duration`))
-      storedViewCount = JSON.parse(localStorage.getItem(`${videoId}_viewCount`))
+      storedDuration = JSON.parse(localStorage.getItem(`${videoId}_duration`));
+      storedViewCount = JSON.parse(
+        localStorage.getItem(`${videoId}_viewCount`),
+      );
     }
 
     if (storedDuration && storedViewCount) {
-      durationSetterFunction(storedDuration)
-      viewCountSetterFunction(storedViewCount)
+      durationSetterFunction(storedDuration);
+      viewCountSetterFunction(storedViewCount);
     } else {
       getVideoDetails(
         useLocalStorage,
         videoId,
         durationSetterFunction,
-        viewCountSetterFunction
-      )
+        viewCountSetterFunction,
+      );
     }
   }, [
     useLocalStorage,
     videoId,
     durationSetterFunction,
     viewCountSetterFunction,
-  ])
-}
+  ]);
+};
 
 export const DescriptionsContainer = styled(Typography)`
   && {
@@ -86,43 +88,43 @@ export const DescriptionsContainer = styled(Typography)`
       width: 80%;
     }
   }
-`
+`;
 
 export const ContentText = styled(Typography)`
   && {
     font-size: 12px;
   }
-`
+`;
 
 export const StatsContainer = styled.div`
   font-size: 12px;
-`
+`;
 
 export const StyledAvatar = styled(Avatar)`
   && {
     height: 24px;
     width: 24px;
   }
-`
+`;
 
 export const AvatarContainer = styled.div`
   display: flex;
   padding: 12px 0;
   align-items: center;
-`
+`;
 
 export const VideoContentTop = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-`
+`;
 
 export const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   flex-basis: 60%;
-`
+`;
 
 export const SearchCardHeader = styled(StyledCardHeader)`
   && {
@@ -134,7 +136,7 @@ export const SearchCardHeader = styled(StyledCardHeader)`
       padding: 0;
     }
   }
-`
+`;
 export const SearchVideoTitle = styled(VideoTitle)`
   && {
     font-weight: 400;
@@ -144,4 +146,4 @@ export const SearchVideoTitle = styled(VideoTitle)`
       line-height: 26px;
     }
   }
-`
+`;

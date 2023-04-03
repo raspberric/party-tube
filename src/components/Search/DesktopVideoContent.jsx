@@ -1,9 +1,9 @@
-import React from 'react'
-import he from 'he'
-import moment from 'moment'
-import numeral from 'numeral'
-import { MoreButton } from '../Videos/MoreButton'
-import { DotSeparator } from '../Videos/ChannelDetails'
+import React from 'react';
+import he from 'he';
+import moment from 'moment';
+import numeral from 'numeral';
+import { MoreButton } from '../Videos/MoreButton';
+import { DotSeparator } from '../Videos/ChannelDetails';
 import {
   ContentContainer,
   VideoContentTop,
@@ -13,7 +13,7 @@ import {
   AvatarContainer,
   StyledAvatar,
   DescriptionsContainer,
-} from './searchUtils'
+} from './searchUtils';
 
 // desktop view can't use MUI CardHeader because position of elements inside CardHeader can't be changed.
 export const DesktopVideoContent = ({
@@ -31,8 +31,8 @@ export const DesktopVideoContent = ({
       <Avatar {...{ channelAvatar, channelTitle }} />
       <Descriptions description={description} />
     </ContentContainer>
-  )
-}
+  );
+};
 
 const Title = ({ title }) => {
   return (
@@ -40,8 +40,8 @@ const Title = ({ title }) => {
       <SearchVideoTitle variant="h3">{he.decode(title)}</SearchVideoTitle>
       <MoreButton isSearchPage={true} />
     </VideoContentTop>
-  )
-}
+  );
+};
 
 const Stats = ({ viewCount, publishedAt }) => {
   return (
@@ -53,8 +53,8 @@ const Stats = ({ viewCount, publishedAt }) => {
         <DotSeparator /> <span>{moment(publishedAt).fromNow()}</span>
       </ContentText>
     </StatsContainer>
-  )
-}
+  );
+};
 
 const Avatar = ({ channelAvatar, channelTitle }) => {
   return (
@@ -64,13 +64,13 @@ const Avatar = ({ channelAvatar, channelTitle }) => {
         {channelTitle}
       </ContentText>
     </AvatarContainer>
-  )
-}
+  );
+};
 
 const Descriptions = ({ description }) => {
   return (
     <DescriptionsContainer>
       {description.substr(0, 120) + '...'}
     </DescriptionsContainer>
-  )
-}
+  );
+};

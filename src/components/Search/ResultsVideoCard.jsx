@@ -1,21 +1,21 @@
-import React, { useState } from 'react'
-import styled from 'styled-components/macro'
-import { useMediaQuery } from '@mui/material'
+import React, { useState } from 'react';
+import styled from 'styled-components/macro';
+import { useMediaQuery } from '@mui/material';
 import {
   TWO_COL_MIN_WIDTH,
   useIsMobileView,
   getFormattedDurationString,
   TWO_COL_MAX_WIDTH,
   useGetChannelDetails,
-} from '../../utils/utils'
-import { useGetVideoDetails } from './searchUtils'
-import { ChannelImage } from './ChannelImage'
-import { VideoThumbnail } from './VideoThumbnail'
-import { MobileChannelContent } from './MobileChannelContent'
-import { MobileVideoContent } from './MobileVideoContent'
-import { ChannelSubscribeButton } from './ChannelSubscribeButton'
-import { DesktopChannelContent } from './DesktopChannelContent'
-import { DesktopVideoContent } from './DesktopVideoContent'
+} from '../../utils/utils';
+import { useGetVideoDetails } from './searchUtils';
+import { ChannelImage } from './ChannelImage';
+import { VideoThumbnail } from './VideoThumbnail';
+import { MobileChannelContent } from './MobileChannelContent';
+import { MobileVideoContent } from './MobileVideoContent';
+import { ChannelSubscribeButton } from './ChannelSubscribeButton';
+import { DesktopChannelContent } from './DesktopChannelContent';
+import { DesktopVideoContent } from './DesktopVideoContent';
 
 const ResultsVideoCard = ({ video }) => {
   const {
@@ -28,26 +28,26 @@ const ResultsVideoCard = ({ video }) => {
       thumbnails,
       description,
     },
-  } = video
+  } = video;
 
-  const isMobileView = useIsMobileView()
-  const isVideo = kind === 'youtube#video'
+  const isMobileView = useIsMobileView();
+  const isVideo = kind === 'youtube#video';
   const showSubscribeButton = useMediaQuery(
-    `(min-width: ${TWO_COL_MAX_WIDTH}px)`
-  )
-  const [viewCount, setViewCount] = useState(null)
-  const [duration, setDuration] = useState(null)
-  const [channelAvatar, setChannelAvatar] = useState(null)
-  const [channelInfo, setChannelInfo] = useState(null)
-  const thumbnailImage = thumbnails.medium.url
+    `(min-width: ${TWO_COL_MAX_WIDTH}px)`,
+  );
+  const [viewCount, setViewCount] = useState(null);
+  const [duration, setDuration] = useState(null);
+  const [channelAvatar, setChannelAvatar] = useState(null);
+  const [channelInfo, setChannelInfo] = useState(null);
+  const thumbnailImage = thumbnails.medium.url;
 
   // get duration and viewCount
   useGetVideoDetails(
     true, // useLocalStorage
     videoId,
     setDuration,
-    setViewCount
-  )
+    setViewCount,
+  );
 
   // get channelAvatar for video or get channel info for channel
   useGetChannelDetails(
@@ -56,10 +56,10 @@ const ResultsVideoCard = ({ video }) => {
     videoId,
     channelId,
     setChannelAvatar,
-    setChannelInfo
-  )
+    setChannelInfo,
+  );
 
-  const formattedDuration = getFormattedDurationString(duration)
+  const formattedDuration = getFormattedDurationString(duration);
 
   if (isVideo) {
     return (
@@ -83,7 +83,7 @@ const ResultsVideoCard = ({ video }) => {
           />
         )}
       </StyledCard>
-    )
+    );
   } else {
     // if the row is a channel
     return (
@@ -102,17 +102,17 @@ const ResultsVideoCard = ({ video }) => {
           </DeskChannelContentContainer>
         )}
       </StyledCard>
-    )
+    );
   }
-}
+};
 
-export default ResultsVideoCard
+export default ResultsVideoCard;
 
 const DeskChannelContentContainer = styled.div`
   display: flex;
   flex-grow: 1;
   flex-basis: 60%;
-`
+`;
 
 const StyledCard = styled.div`
   margin-top: 12px;
@@ -124,4 +124,4 @@ const StyledCard = styled.div`
     height: 100%;
     width: 100%;
   }
-`
+`;

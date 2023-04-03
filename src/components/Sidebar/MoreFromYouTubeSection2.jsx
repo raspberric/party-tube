@@ -1,6 +1,5 @@
 import { moreFromYouTubeRows } from './sidebarData';
-import { SidebarRow } from "./SidebarRow";
-
+import { SidebarRow } from './SidebarRow';
 
 export const MoreFromYouTubeSection2 = () => {
   return moreFromYouTubeRows.slice(4).map(({ Icon, text }) => {

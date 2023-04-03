@@ -1,6 +1,6 @@
-import React from 'react'
-import Tabs from '@mui/material/Tabs'
-import styled from 'styled-components/macro'
+import React from 'react';
+import Tabs from '@mui/material/Tabs';
+import styled from 'styled-components/macro';
 import {
   HideOnScroll,
   MOBILE_VIEW_HEADER_HEIGHT as MOBILE_CATEGORIES_BAR_HEIGHT,
@@ -12,10 +12,10 @@ import {
   MINI_SIDEBAR_WIDTH,
   SHOW_FULL_SIDEBAR_BREAKPOINT,
   SHOW_MINI_SIDEBAR_BREAKPOINT,
-} from '../../utils/utils'
-import { Chips } from './Chips'
-import { useAtom } from 'jotai'
-import { userSettingToShowFullSidebarAtom } from '../../store'
+} from '../../utils/utils';
+import { Chips } from './Chips';
+import { useAtom } from 'jotai';
+import { userSettingToShowFullSidebarAtom } from '../../store';
 
 const ChipsBar = ({
   selectedChipIndex,
@@ -24,14 +24,12 @@ const ChipsBar = ({
   setPopularVideosNextPageToken,
 }) => {
   const [userSettingToShowFullSidebar] = useAtom(
-    userSettingToShowFullSidebarAtom
-  )
+    userSettingToShowFullSidebarAtom,
+  );
 
   return (
     <HideOnScroll>
-      <ChipsContainer
-        showFullSidebar={userSettingToShowFullSidebar}
-      >
+      <ChipsContainer showFullSidebar={userSettingToShowFullSidebar}>
         <StyledTabs
           variant="scrollable"
           scrollButtons={false}
@@ -50,10 +48,10 @@ const ChipsBar = ({
         </StyledTabs>
       </ChipsContainer>
     </HideOnScroll>
-  )
-}
+  );
+};
 
-export default ChipsBar
+export default ChipsBar;
 
 const StyledTabs = styled(Tabs)`
   /* to make the tabs indicator invisible */
@@ -70,7 +68,7 @@ const StyledTabs = styled(Tabs)`
       padding-left: 24px;
     }
   }
-`
+`;
 
 const ChipsContainer = styled.div`
   width: 100vw;
@@ -119,4 +117,4 @@ const ChipsContainer = styled.div`
       justify-content: center;
     }
   }
-`
+`;

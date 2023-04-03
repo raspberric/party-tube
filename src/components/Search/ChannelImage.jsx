@@ -1,15 +1,15 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import { TWO_COL_MIN_WIDTH } from '../../utils/utils'
-import { StyledImageContainer } from './VideoThumbnail'
+import React from 'react';
+import styled from 'styled-components/macro';
+import { TWO_COL_MIN_WIDTH } from '../../utils/utils';
+import { StyledImageContainer } from './VideoThumbnail';
 
 export const ChannelImage = ({ thumbnailImage }) => {
   return (
     <StyledImageContainer>
       <ChannelImg src={thumbnailImage} />
     </StyledImageContainer>
-  )
-}
+  );
+};
 
 const ChannelImg = styled.img`
   height: 90px;
@@ -20,4 +20,4 @@ const ChannelImg = styled.img`
     height: 136px;
     width: 136px;
   }
-`
+`;

@@ -1,20 +1,20 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import SearchIcon from '@mui/icons-material/Search'
+import React from 'react';
+import styled from 'styled-components/macro';
+import SearchIcon from '@mui/icons-material/Search';
 import {
   IconTooltip,
   StyledIconButton,
   handleSearchFormSubmit,
   useClearSearchTerm,
-} from '../../../utils/utils'
-import { useAtom } from 'jotai'
-import { searchTermAtom, searchResultsAtom } from '../../../store'
-import { useHistory } from 'react-router'
+} from '../../../utils/utils';
+import { useAtom } from 'jotai';
+import { searchTermAtom, searchResultsAtom } from '../../../store';
+import { useHistory } from 'react-router';
 
 export const SearchContainerWithTextField = () => {
-  const [searchTerm, setSearchTerm] = useAtom(searchTermAtom)
-  const [, setSearchResults] = useAtom(searchResultsAtom)
-  const history = useHistory()
+  const [searchTerm, setSearchTerm] = useAtom(searchTermAtom);
+  const [, setSearchResults] = useAtom(searchResultsAtom);
+  const history = useHistory();
 
   const handleSubmit = (event) => {
     handleSearchFormSubmit(
@@ -22,12 +22,12 @@ export const SearchContainerWithTextField = () => {
       searchTerm,
       setSearchResults,
       history,
-      true //useLocalData
-    )
-  }
+      true, //useLocalData
+    );
+  };
 
   // reset searchTerm when click on Home button and goes to landing page
-  useClearSearchTerm(history, setSearchTerm)
+  useClearSearchTerm(history, setSearchTerm);
 
   return (
     <StyledForm onSubmit={(event) => handleSubmit(event)}>
@@ -44,8 +44,8 @@ export const SearchContainerWithTextField = () => {
         </SearchIconContainer>
       </IconTooltip>
     </StyledForm>
-  )
-}
+  );
+};
 
 export const StyledForm = styled.form`
   flex-grow: 1;
@@ -54,7 +54,7 @@ export const StyledForm = styled.form`
   display: flex;
   max-width: 640px;
   border: 0.2px solid lightgray;
-`
+`;
 
 export const SearchBox = styled.input`
   border: none;
@@ -74,7 +74,7 @@ export const SearchBox = styled.input`
     /* not sure if it will solve the Safari vertical alignment issue */
     line-height: revert;
   }
-`
+`;
 
 export const SearchIconContainer = styled.div`
   width: 72px;
@@ -90,4 +90,4 @@ export const SearchIconContainer = styled.div`
   &:hover {
     background-color: #f0f0f0;
   }
-`
+`;

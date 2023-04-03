@@ -1,8 +1,11 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import BottomNavigation from '@mui/material/BottomNavigation'
-import { FooterIcons as MiniSidebarIcons } from '../Footer/FooterIcons'
-import { MINI_SIDEBAR_WIDTH, DESKTOP_VIEW_HEADER_HEIGHT } from '../../utils/utils'
+import React from 'react';
+import styled from 'styled-components/macro';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import { FooterIcons as MiniSidebarIcons } from '../Footer/FooterIcons';
+import {
+  MINI_SIDEBAR_WIDTH,
+  DESKTOP_VIEW_HEADER_HEIGHT,
+} from '../../utils/utils';
 
 const MiniSidebar = () => {
   return (
@@ -11,10 +14,10 @@ const MiniSidebar = () => {
         <MiniSidebarIcons />
       </div>
     </MiniSidebarContainer>
-  )
-}
+  );
+};
 
-export default MiniSidebar
+export default MiniSidebar;
 
 const MiniSidebarContainer = styled(BottomNavigation)`
   && {
@@ -32,4 +35,4 @@ const MiniSidebarContainer = styled(BottomNavigation)`
       font-size: 10px;
     }
   }
-`
+`;

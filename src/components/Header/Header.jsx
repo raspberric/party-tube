@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import AppBar from '@mui/material/AppBar'
-import Toolbar from '@mui/material/Toolbar'
-import LeftContainer from './LeftContainer/LeftContainer'
-import MiddleContainer from './MiddleContainer/MiddleContainer'
-import RightContainer from './RightContainer/RightContainer'
+import React from 'react';
+import styled from 'styled-components/macro';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import LeftContainer from './LeftContainer/LeftContainer';
+import MiddleContainer from './MiddleContainer/MiddleContainer';
+import RightContainer from './RightContainer/RightContainer';
 import {
   TWO_COL_MIN_WIDTH,
   MOBILE_VIEW_HEADER_HEIGHT,
@@ -12,11 +12,11 @@ import {
   HideOnScroll,
   useIsMobileView,
   HEADER_OPACITY,
-} from '../../utils/utils'
+} from '../../utils/utils';
 // import { TextForScrollingTest } from '../utils/TextForScrollingTest'
 
 function Header() {
-  const isMobileView = useIsMobileView()
+  const isMobileView = useIsMobileView();
   return (
     <>
       <HideOnScroll>
@@ -33,10 +33,10 @@ function Header() {
       {/* Below text only to test if hiding the AppBar works */}
       {/* <TextForScrollingTest /> */}
     </>
-  )
+  );
 }
 
-export default Header
+export default Header;
 
 export const StyledAppBar = styled(AppBar)`
   && {
@@ -55,7 +55,7 @@ export const StyledAppBar = styled(AppBar)`
       height: ${DESKTOP_VIEW_HEADER_HEIGHT}px;
     }
   }
-`
+`;
 
 const StyledToolbar = styled(Toolbar)`
   padding-left: 0;
@@ -64,4 +64,4 @@ const StyledToolbar = styled(Toolbar)`
     padding-left: 16px;
     padding-right: 16px;
   }
-`
+`;

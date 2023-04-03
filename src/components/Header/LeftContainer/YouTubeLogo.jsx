@@ -1,19 +1,19 @@
-import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import styled from 'styled-components/macro'
-import Tooltip from '@mui/material/Tooltip'
-import { TWO_COL_MIN_WIDTH } from '../../../utils/utils'
-import { useIsMobileView } from '../../../utils/utils'
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import styled from 'styled-components/macro';
+import Tooltip from '@mui/material/Tooltip';
+import { TWO_COL_MIN_WIDTH } from '../../../utils/utils';
+import { useIsMobileView } from '../../../utils/utils';
 
 const YouTubeLogo = () => {
   const fullLogoUrl =
-    'https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg'
+    'https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg';
   const smallLogoUrl =
-    'https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg'
+    'https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg';
 
-  const isMobileView = useIsMobileView()
-  const currentLocation = useLocation()
-  const isInSearchResultsPage = currentLocation.pathname === '/results'
+  const isMobileView = useIsMobileView();
+  const currentLocation = useLocation();
+  const isInSearchResultsPage = currentLocation.pathname === '/results';
 
   return (
     <Link to="/">
@@ -28,10 +28,10 @@ const YouTubeLogo = () => {
         </YouTubeLogoContainer>
       </YouTubeLogoTooltip>
     </Link>
-  )
-}
+  );
+};
 
-export default YouTubeLogo
+export default YouTubeLogo;
 
 const YouTubeLogoTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -45,13 +45,13 @@ const YouTubeLogoTooltip = styled(({ className, ...props }) => (
     padding: 0.2rem 0.4rem;
     border-radius: 2px;
   }
-`
+`;
 
 const YouTubeLogoContainer = styled.button`
   border: none;
   background-color: transparent;
   height: 100%;
-`
+`;
 
 const Logo = styled.img`
   margin: auto 1rem;
@@ -60,4 +60,4 @@ const Logo = styled.img`
   @media screen and (min-width: ${TWO_COL_MIN_WIDTH}px) {
     margin: auto 16px;
   }
-`
+`;

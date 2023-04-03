@@ -1,13 +1,13 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import Menu from '@mui/material/Menu'
-import ListItemText from '@mui/material/ListItemText'
+import React from 'react';
+import styled from 'styled-components/macro';
+import Menu from '@mui/material/Menu';
+import ListItemText from '@mui/material/ListItemText';
 import {
   DEFAULT_FONT_SIZE,
   StyledMenuItem,
   StyledListItemIcon,
-} from '../../../../utils/utils'
-import { createVideoMenuItems } from './createVideoMenuItems'
+} from '../../../../utils/utils';
+import { createVideoMenuItems } from './createVideoMenuItems';
 
 const CreateVideoMenu = ({ anchorVideoButton, handleVideoMenuClose }) => {
   return (
@@ -24,13 +24,13 @@ const CreateVideoMenu = ({ anchorVideoButton, handleVideoMenuClose }) => {
             </StyledListItemIcon>
             <ListItemText primary={text} />
           </StyledMenuItem>
-        )
+        );
       })}
     </VideoMenu>
-  )
-}
+  );
+};
 
-export default CreateVideoMenu
+export default CreateVideoMenu;
 
 const VideoMenu = styled(({ className, ...props }) => (
   <Menu
@@ -57,4 +57,4 @@ const VideoMenu = styled(({ className, ...props }) => (
   .MuiTypography-body1 {
     font-size: ${DEFAULT_FONT_SIZE}px;
   }
-`
+`;

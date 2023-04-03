@@ -1,38 +1,38 @@
-import React, { useState } from 'react'
-import styled from 'styled-components/macro'
-import Card from '@mui/material/Card'
-import CardMedia from '@mui/material/CardMedia'
-import CardHeader from '@mui/material/CardHeader'
-import Avatar from '@mui/material/Avatar'
-import IconButton from '@mui/material/IconButton'
-import { Typography } from '@mui/material'
+import React, { useState } from 'react';
+import styled from 'styled-components/macro';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import CardHeader from '@mui/material/CardHeader';
+import Avatar from '@mui/material/Avatar';
+import IconButton from '@mui/material/IconButton';
+import { Typography } from '@mui/material';
 import {
   useIsMobileView,
   TWO_COL_MIN_WIDTH,
   getFormattedDurationString,
   useGetChannelDetails,
-} from '../../utils/utils'
-import he from 'he'
-import { ChannelDetails } from './ChannelDetails'
-import { MoreButton } from './MoreButton'
+} from '../../utils/utils';
+import he from 'he';
+import { ChannelDetails } from './ChannelDetails';
+import { MoreButton } from './MoreButton';
 
 const VideoCard = ({ video }) => {
-  const isMobileView = useIsMobileView()
+  const isMobileView = useIsMobileView();
   const {
     id: videoId,
     contentDetails: { duration },
     snippet: { channelId, channelTitle, title, publishedAt, thumbnails },
     statistics: { viewCount },
-  } = video
+  } = video;
 
   const thumbnailImage = isMobileView
     ? thumbnails.medium.url
     : thumbnails.maxres
     ? thumbnails.maxres.url
-    : thumbnails.medium.url
+    : thumbnails.medium.url;
 
-  const formattedDuration = getFormattedDurationString(duration)
-  const [channelAvatar, setChannelAvatar] = useState(null)
+  const formattedDuration = getFormattedDurationString(duration);
+  const [channelAvatar, setChannelAvatar] = useState(null);
 
   // Get channelAvatar
   useGetChannelDetails(
@@ -41,8 +41,8 @@ const VideoCard = ({ video }) => {
     videoId,
     channelId,
     setChannelAvatar,
-    null // channelInfoSetterFunction
-  )
+    null, // channelInfoSetterFunction
+  );
 
   return (
     <StyledCard square={true} elevation={0}>
@@ -57,10 +57,10 @@ const VideoCard = ({ video }) => {
         }
       />
     </StyledCard>
-  )
-}
+  );
+};
 
-export default VideoCard
+export default VideoCard;
 
 const Thumbnail = ({ thumbnailImage, formattedDuration }) => {
   return (
@@ -73,8 +73,8 @@ const Thumbnail = ({ thumbnailImage, formattedDuration }) => {
       />
       <DurationContainer variant="body2">{formattedDuration}</DurationContainer>
     </ImageContainer>
-  )
-}
+  );
+};
 
 export const StyledIconButton = styled(IconButton)`
   && {
@@ -85,12 +85,12 @@ export const StyledIconButton = styled(IconButton)`
       background-color: transparent;
     }
   }
-`
+`;
 
 export const ImageContainer = styled.div`
   /* for the duration container in bottom right corner */
   position: relative;
-`
+`;
 
 export const DurationContainer = styled(Typography)`
   && {
@@ -108,7 +108,7 @@ export const DurationContainer = styled(Typography)`
       padding: 2px 6px;
     }
   }
-`
+`;
 
 const StyledCard = styled(Card)`
   && {
@@ -119,7 +119,7 @@ const StyledCard = styled(Card)`
       margin-bottom: 30px; // original is 40px but 30px here account for padding
     }
   }
-`
+`;
 
 export const StyledCardHeader = styled(CardHeader)`
   && {
@@ -136,7 +136,7 @@ export const StyledCardHeader = styled(CardHeader)`
   .MuiCardHeader-content {
     padding-left: 12px;
   }
-`
+`;
 
 export const VideoTitle = styled(Typography)`
   /* 1rem in original YouTube in 10px */
@@ -158,7 +158,7 @@ export const VideoTitle = styled(Typography)`
       margin-bottom: 6px;
     }
   }
-`
+`;
 
 export const StyledAvatar = styled(Avatar)`
   &&& {
@@ -172,4 +172,4 @@ export const StyledAvatar = styled(Avatar)`
       background-color: #ef6c00;
     }
   }
-`
+`;
