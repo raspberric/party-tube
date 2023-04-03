@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components/macro'
-import { ThemeProvider, StyledEngineProvider } from '@mui/styles';
+import { ThemeProvider } from '@mui/styles';
+import { StyledEngineProvider } from "@mui/styled-engine";
 import { Grid } from '@mui/material'
 import { columnBreakpoints } from '../components/Videos/columnBreakpoints'
 import {
