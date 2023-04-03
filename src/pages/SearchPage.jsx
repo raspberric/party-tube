@@ -23,7 +23,6 @@ const SearchPage = () => {
         {!isMobileView && (
           <FilterButton
             variant="contained"
-            color="default"
             startIcon={<TuneIcon />}
             disableElevation
             disableRipple
