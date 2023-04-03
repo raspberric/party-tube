@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createGlobalStyle } from "styled-components/macro";
 import { BrowserRouter } from "react-router-dom";
-import YoutubeApp from "./YoutubeApp";
+import { createGlobalStyle } from "styled-components/macro";
+import { App } from "./App";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -16,7 +16,7 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <GlobalStyle />
-      <YoutubeApp />
+      <App />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
