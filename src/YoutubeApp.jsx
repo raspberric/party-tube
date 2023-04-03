@@ -1,11 +1,11 @@
 import React from 'react'
 import Header from './components/Header/Header.jsx'
-import MobileFooter from './components/Footer/Footer'
+import MobileFooter from './components/Footer/Footer.jsx'
 import Main from './components/Main/Main.jsx'
-import { useIsMobileView } from './utils/utils'
+import { useIsMobileView } from './utils/utils.jsx'
 import './App.css'
 
-function App() {
+function YoutubeApp() {
   const isMobileView = useIsMobileView()
 
   return (
@@ -17,4 +17,4 @@ function App() {
   )
 }
 
-export default App
+export default YoutubeApp
