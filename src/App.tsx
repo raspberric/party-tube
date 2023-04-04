@@ -1,11 +1,14 @@
-import { Button, Paper, TextField, Typography } from '@mui/material';
+import { Button, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const App: React.FC = () => {
   return (
     <AppWrapper>
-      <HomeScreen></HomeScreen>
+      <Routes>
+        <Route path="/" element={<HomeScreen />}></Route>
+      </Routes>
     </AppWrapper>
   );
 };
@@ -17,6 +20,7 @@ const AppWrapper = styled.div`
 
 const HomeScreen: React.FC = () => {
   const [nickname, setNickname] = useState('');
+  const navigate = useNavigate();
 
   return (
     <HomeScreenWrapper>
@@ -26,10 +30,19 @@ const HomeScreen: React.FC = () => {
         variant="outlined"
       />
       <StyledWhatAreYou />
-      <StyledButton disabled={!nickname} variant="contained">
+      <StyledButton
+        disabled={!nickname}
+        onClick={() => navigate('host')}
+        variant="contained"
+      >
         Host
       </StyledButton>
-      <StyledButton disabled={!nickname} variant="contained" color="secondary">
+      <StyledButton
+        disabled={!nickname}
+        onClick={() => navigate('guest')}
+        variant="contained"
+        color="secondary"
+      >
         Guest
       </StyledButton>
     </HomeScreenWrapper>
