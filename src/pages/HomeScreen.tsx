@@ -17,7 +17,7 @@ export const HomeScreen: React.FC = () => {
       <StyledWhatAreYou />
       <StyledButton
         disabled={!nickname}
-        onClick={() => navigate('host')}
+        onClick={() => navigate(`host/${nickname}`)}
         variant="contained"
       >
         Host
