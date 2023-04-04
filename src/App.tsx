@@ -1,4 +1,5 @@
 import { Button, Paper, TextField, Typography } from '@mui/material';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 export const App: React.FC = () => {
@@ -15,12 +16,20 @@ const AppWrapper = styled.div`
 `;
 
 const HomeScreen: React.FC = () => {
+  const [nickname, setNickname] = useState('');
+
   return (
     <HomeScreenWrapper>
-      <TextField label="Enter your nickname" variant="outlined" />
+      <TextField
+        onChange={(event) => setNickname(event.target.value)}
+        label="Enter your nickname"
+        variant="outlined"
+      />
       <StyledWhatAreYou />
-      <StyledButton variant="contained">Host</StyledButton>
-      <StyledButton variant="contained" color="secondary">
+      <StyledButton disabled={!nickname} variant="contained">
+        Host
+      </StyledButton>
+      <StyledButton disabled={!nickname} variant="contained" color="secondary">
         Guest
       </StyledButton>
     </HomeScreenWrapper>
@@ -42,7 +51,7 @@ const HomeScreenWrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
   align-content: center;
-  margin: 20px;
+  padding: 20px;
 
   ${StyledWhatAreYou} {
     margin-top: 60px;
